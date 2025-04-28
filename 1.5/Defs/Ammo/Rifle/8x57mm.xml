@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>Ammo8x57mm</defName>
+		<label>8x57mm</label>
+		<parent>AmmoRifles</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberRifle</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_8x57mm</defName>
+		<label>8x57mm</label>
+		<ammoTypes>
+			<Ammo_8x57mm_FMJ>Bullet_8x57mm_FMJ</Ammo_8x57mm_FMJ>
+			<Ammo_8x57mm_AP>Bullet_8x57mm_AP</Ammo_8x57mm_AP>
+			<Ammo_8x57mm_HP>Bullet_8x57mm_HP</Ammo_8x57mm_HP>
+		</ammoTypes>
+		<similarTo>AmmoSet_Rifle</similarTo>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="8x57mmBase" ParentName="SmallAmmoBase" Abstract="True">
+		<description>Large rifle bullet used in machine guns, sniper rifles and the occasional assault rifle.</description>
+		<statBases>
+			<Mass>0.028</Mass>
+			<Bulk>0.03</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo8x57mm</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="8x57mmBase">
+		<defName>Ammo_8x57mm_FMJ</defName>
+		<label>8x57mm (FMJ)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/Clip/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.12</MarketValue>
+		</statBases>
+		<ammoClass>FullMetalJacket</ammoClass>
+		<cookOffProjectile>Bullet_8x57mm_FMJ</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="8x57mmBase">
+		<defName>Ammo_8x57mm_AP</defName>
+		<label>8x57mm (AP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/Clip/AP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.12</MarketValue>
+		</statBases>
+		<ammoClass>ArmorPiercing</ammoClass>
+		<cookOffProjectile>Bullet_8x57mm_AP</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="8x57mmBase">
+		<defName>Ammo_8x57mm_HP</defName>
+		<label>8x57mm (HP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/Clip/HP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.12</MarketValue>
+		</statBases>
+		<ammoClass>HollowPoint</ammoClass>
+		<cookOffProjectile>Bullet_8x57mm_HP</cookOffProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="Base8x57mmBullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<speed>154</speed>
+			<dropsCasings>true</dropsCasings>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base8x57mmBullet">
+		<defName>Bullet_8x57mm_FMJ</defName>
+		<label>8x57mm bullet(FMJ)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationSharp>7.5</armorPenetrationSharp>
+			<armorPenetrationBlunt>78.68</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base8x57mmBullet">
+		<defName>Bullet_8x57mm_AP</defName>
+		<label>8x57mm bullet (AP)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationSharp>15</armorPenetrationSharp>
+			<armorPenetrationBlunt>78.68</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base8x57mmBullet">
+		<defName>Bullet_8x57mm_HP</defName>
+		<label>8x57mm bullet (HP)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>26</damageAmountBase>
+			<armorPenetrationSharp>4</armorPenetrationSharp>
+			<armorPenetrationBlunt>78.68</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_8x57mm_FMJ</defName>
+		<label>make 8x57mm (FMJ) cartridge x500</label>
+		<description>Craft 500 8x57mm (FMJ) cartridges.</description>
+		<jobString>Making 8x57mm (FMJ) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_8x57mm_FMJ>500</Ammo_8x57mm_FMJ>
+		</products>
+		<workAmount>3000</workAmount>
+		<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_8x57mm_AP</defName>
+		<label>make 8x57mm (AP) cartridge x500</label>
+		<description>Craft 500 8x57mm (AP) cartridges.</description>
+		<jobString>Making 8x57mm (AP) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_8x57mm_AP>500</Ammo_8x57mm_AP>
+		</products>
+		<workAmount>3600</workAmount>
+		<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>		
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_8x57mm_HP</defName>
+		<label>make 8x57mm (HP) cartridge x500</label>
+		<description>Craft 500 8x57mm (HP) cartridges.</description>
+		<jobString>Making 8x57mm (HP) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_8x57mm_HP>500</Ammo_8x57mm_HP>
+		</products>
+		<workAmount>3000</workAmount>
+		<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>		
+	</RecipeDef>
+
+</Defs>

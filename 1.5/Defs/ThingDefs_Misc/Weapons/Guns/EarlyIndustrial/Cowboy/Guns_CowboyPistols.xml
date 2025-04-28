@@ -1,0 +1,2693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- 
+
+							Gunslinger Amory - Pistols & Revolvers
+	Requires
+
+		- Combat Extended
+		- Gun Galore Core
+
+	Todo 
+
+		- harmonizing :
+			- work to make + costs
+		- ammo swap sets
+		- debug
+
+
+	Sources
+
+		- CE CowBoys (thx to Auggie !!!)
+		- CE Blackpowder revolvers & rifles
+		- CE 2-Bore
+		- Gun Galore Civil War
+		- WildWest Firearms
+		- Huntworld Down
+
+	-->
+
+	<!-- Colt Walker -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_WalkerBP</defName>
+		<label>Colt Walker</label>
+		<description>1847 Colt Walker. Samuel Colt's second-ever handgun design was this Texas behemoth, The Colt-Walker Revolver was designed to replace the old single-shot saddle pistols while still having similar power, enough to kill a horse in one shot. One of the largest most powerful black-powder revolvers developed, pushing a 44 slug with 60 grains of black powder.\n\n"Well are ya' gonna pull those pistols or whistle Dixie?"</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_Walker</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>7000</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.13</ShotSpread>
+			<SwayFactor>1.97</SwayFactor>
+			<Bulk>3.90</Bulk>
+			<Mass>2.0</Mass>
+			<RangedWeapon_Cooldown>0.87</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>		
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.92</recoilAmount>			
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_44Shot_Ball</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>20</range>
+				<soundCast>Shot_SARevolver</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>6</magazineSize>	
+				<reloadOneAtATime>true</reloadOneAtATime>
+				<reloadTime>4.4</reloadTime>
+				<ammoSet>AmmoSet_44ShotWalker</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>3</Crafting>
+		  </skillRequirements>			
+		</recipeMaker>   
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>1.54</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.85</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+		       	  <li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.18,1.18</DrawSize>
+				<DrawOffset>0.03,-0.07</DrawOffset>
+			</li>	
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.9,0.7)</drawSize>
+				<offsets>
+					<li>(0.54,0.055)</li>
+				</offsets>
+			</li>			
+		</modExtensions>
+		<weaponTags>
+		 <li>SimpleGun</li>
+		 <li>Revolver</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>FrontierGunSimple</li>		
+		 <li>Auggie_BP_LongArm</li>		 
+		 <li>NeolithicRangedChief</li>
+		</weaponTags>
+	</ThingDef>	
+
+	<!-- Colt Walker Silver Variant -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1847_Walker_Silver_</defName>
+		<label>Colt M1847 Walker Silver</label>
+		<description>Caliber: .44 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1847_Walker_Silver</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Silver>30</Silver>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>18000</WorkToMake>
+			<Mass>2.2</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_SupporterSuggestions</li>
+			<li>CGF1_GunsGalore_SupporterSuggestions_Gun</li>
+			<li>CGF1_GunsGalore_FancyFirearms</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_44CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver_Heavy1</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.3,1.3)</drawSize>
+				<offsets>
+					<li>(0.34,0.15)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.0125</generateCommonality> <!-- Rare -->
+	</ThingDef>
+
+	<!-- Colt Dragoon 1848 -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1848_Dragoon_</defName>
+		<label>Colt M1848 Dragoon</label>
+		<description>Caliber: .44 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1848_Dragoon</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>25</Steel>
+			<WoodLog>5</WoodLog>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>1.9</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_44CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver_Heavy1</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.3,1.3)</drawSize>
+				<offsets>
+					<li>(0.34,0.15)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.20</generateCommonality> <!-- Common -->
+	</ThingDef>
+
+	<!-- Colt Dragoon Nickel -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1848_Dragoon_Nickel_</defName>
+		<label>Colt M1848 Dragoon Nickel</label>
+		<description>Caliber: .44 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1848_Dragoon_Nickel</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<WoodLog>5</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>10000</WorkToMake>
+			<Mass>1.9</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_44CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver_Heavy1</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.3,1.3)</drawSize>
+				<offsets>
+					<li>(0.34,0.15)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.10</generateCommonality> <!-- Average -->
+	</ThingDef>
+
+	<!-- Colt Navy 1851 -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_Colt1851Navy</defName>
+		<label>Colt 1851 Navy</label>
+		<description>Colt 1851 Navy. One of the most popular military revolver designs both in the US and the export market. .36 caliber bore with an excellent balance and grip, just point and shoot.\n\n"You see in this world there's two kinds of people my friend. Those with loaded guns, and those who dig."</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1851_Navy</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>3500</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.15</ShotSpread>
+			<SwayFactor>1.5</SwayFactor>
+			<Bulk>3.30</Bulk>
+			<Mass>1.20</Mass>
+			<RangedWeapon_Cooldown>0.86</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>		
+			<Steel>25</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.35</recoilAmount>			
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_36Shot_Ball</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>18</range>
+				<soundCast>Shot_Navy</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>6</magazineSize>
+				<reloadOneAtATime>true</reloadOneAtATime>
+				<reloadTime>4.4</reloadTime>
+				<ammoSet>AmmoSet_36Shot</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>3</Crafting>
+		  </skillRequirements>				
+		</recipeMaker>   
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+		       	  <li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.1,1.1</DrawSize>
+				<DrawOffset>0.01,-0.02</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.7,0.5)</drawSize>
+				<offsets>
+					<li>(0.42,0.098)</li>
+				</offsets>
+			</li>					
+		</modExtensions>		
+		<weaponTags>
+		 <li>SimpleGun</li>
+         <li>CE_Sidearm</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>FrontierGunSimple</li>	
+		 <li>Auggie_BP_Sidearm</li>		 
+		</weaponTags>		
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>		
+	</ThingDef>		
+
+	<!-- Colt Navy 1851 Nickel Variant -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1851_Navy_Nickel_</defName>
+		<label>Colt M1851 Navy Nickel</label>
+		<description>Caliber: .36 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1851_Navy_Nickel</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>2
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>30</Steel>
+			<WoodLog>5</WoodLog>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>1.2</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_36CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver2</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.1,1.1)</drawSize>
+				<offsets>
+					<li>(0.29,0.11)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>1.5</generateCommonality> <!-- Everywhere -->
+	</ThingDef>
+
+	<!-- Colt Navy 1851 US Marshall -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1851_Navy_USMarshall_</defName>
+		<label>Colt M1851 Navy US Marshall</label>
+		<description>Caliber: .36 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1851_Navy_USMarshall</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>20</Steel>
+			<WoodLog>5</WoodLog>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>4000</WorkToMake>
+			<Mass>1.0</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_36CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver2</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.1,1.1)</drawSize>
+				<offsets>
+					<li>(0.24,0.12)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+	</ThingDef>	
+
+	<!-- 36 Pepperbox -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_36Pepperbox</defName>
+		<label>36 Pepperbox</label>
+		<description>36 Pepperbox. An early simplistic double-action pistol. Can easily be concealed and fired from the hip, has no sights, and is hard to hit anything at range. This model is a .36 caliber 4-shot. \n\n"Five Aces and one big problem"</description>
+		<generateAllowChance>0.25</generateAllowChance>	
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Da_Peppabox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<weaponClasses>
+			<li>ShortShots</li>
+			<li>RangedLight</li>			
+		</weaponClasses>			
+		<statBases>
+			<WorkToMake>4500</WorkToMake>
+			<SightsEfficiency>0.50</SightsEfficiency>
+			<ShotSpread>0.18</ShotSpread>
+			<SwayFactor>1.17</SwayFactor>
+			<Bulk>2.00</Bulk>
+			<Mass>1.50</Mass>
+			<RangedWeapon_Cooldown>0.40</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>		
+			<Steel>20</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.48</recoilAmount>			
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_36Shot_Ball</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>12</range>
+				<soundCast>Shot_MachinePistol</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>4</magazineSize>			
+				<reloadTime>4.6</reloadTime>
+				<ammoSet>AmmoSet_36Shot</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_DoubleAction</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>3</Crafting>
+		  </skillRequirements>		
+		</recipeMaker>   
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+		       	  <li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<weaponTags>
+		 <li>SimpleGun</li>
+         <li>CE_Sidearm</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>FrontierGunSimple</li>
+		 <li>CE_AI_BROOM</li>
+	     <li>ShortShots</li>	
+		 <li>Auggie_BP_Sidearm</li>		 
+		</weaponTags>		
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>0.92,0.92</DrawSize>
+				<DrawOffset>0.0,0.0</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.5,0.5)</drawSize>
+				<offsets>
+					<li>(0.28,0.06)</li>
+				</offsets>
+			</li>				
+		</modExtensions>
+	</ThingDef>		
+
+	<!-- Walch Revolver -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_WalchRevolver</defName>
+		<label>Walch Revolver</label>
+		<description>Walch Navy Revolver. Patented by John Walch in 1859, this is a .36 caliber revolver using superimposed chambers, meaning that each of the six chambers could hold two shots, for a total of 12 rounds before reloading. Two hammers and two side-by-side triggers, with the trigger for the front loading being positioned slightly ahead of the rear load’s trigger, to help ensure that they are fired in the correct order. two shots can be fired in very quick succession with this arramgement.\n\n"Twelve shots... More than enough to kill anything that moves."</description>
+		<generateAllowChance>0.75</generateAllowChance>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Walch_Navy</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>5000</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.16</ShotSpread>
+			<SwayFactor>1.57</SwayFactor>
+			<Bulk>3.11</Bulk>
+			<Mass>1.60</Mass>
+			<RangedWeapon_Cooldown>0.86</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>		
+			<Steel>30</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.43</recoilAmount>					
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_36Shot_Ball</defaultProjectile>
+				<burstShotCount>2</burstShotCount>
+				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+				<warmupTime>0.5</warmupTime>
+				<range>18</range>
+				<soundCast>Shot_Navy</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>12</magazineSize>
+				<reloadOneAtATime>true</reloadOneAtATime>
+				<reloadTime>4.2</reloadTime>
+				<ammoSet>AmmoSet_36Shot</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_DoubleAction</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>3</Crafting>
+		  </skillRequirements>				
+		</recipeMaker>   
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+		       	  <li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<modExtensions>
+	     <li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>1.1,1.1</DrawSize>
+			<DrawOffset>0.01,-0.02</DrawOffset>
+		 </li>	
+		 <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+			<def>MF_StandardMuzzleFalshTwo</def>
+			<drawSize>(0.7,0.5)</drawSize>
+			<offsets>
+				<li>(0.47,0.090)</li>
+			</offsets>
+		 </li>			 
+	    </modExtensions>			
+		<weaponTags>
+		 <li>SimpleGun</li>
+         <li>CE_Sidearm</li>
+		 <li>Revolver</li>
+		 <li>CE_AI_BROOM</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>FrontierGunSimple</li>
+		 <li>NeolithicRangedChief</li>
+		 <li>Auggie_BP_Sidearm</li>	
+		 <li>Auggie_BP_LongArm</li>			 
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>		
+	</ThingDef>		
+
+	<!-- Starr Revolver -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_StarrRevolver</defName>
+		<label>Starr Revolver</label>
+		<description>Starr Revolver. An early development of a true double-action revolver, rather then cocking the gun by manual pulling the hammer down, the hammer is cocked via the trigger pull. Less popular then single action models due to its fragility.\n\n"You just shot an unarmed man"-"He should have armed himself"</description>
+		<generateAllowChance>0.85</generateAllowChance>		
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Starr_Revolver</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>5000</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.16</ShotSpread>
+			<SwayFactor>1.40</SwayFactor>
+			<Bulk>2.95</Bulk>
+			<Mass>1.25</Mass>
+			<RangedWeapon_Cooldown>0.48</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>		
+			<Steel>25</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>2.42</recoilAmount>					
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_44Shot_Ball</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>18</range>
+				<soundCast>Shot_Revolver</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>6</magazineSize>
+				<reloadOneAtATime>true</reloadOneAtATime>
+				<reloadTime>4.4</reloadTime>
+				<ammoSet>AmmoSet_44Shot</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_DoubleAction</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>4</Crafting>
+		  </skillRequirements>			
+		</recipeMaker>   
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+		       	  <li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.15,1.15</DrawSize>
+				<DrawOffset>0.01,-0.02</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.9,0.7)</drawSize>
+				<offsets>
+					<li>(0.35,0.09)</li>
+				</offsets>
+			</li>					
+		</modExtensions>			
+		<weaponTags>
+		 <li>SimpleGun</li>
+         <li>CE_Sidearm</li>
+		 <li>Revolver</li>
+		 <li>CE_AI_BROOM</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>FrontierGunSimple</li>
+		 <li>Auggie_BP_Sidearm</li>	
+		 <li>Auggie_BP_LongArm</li>			 
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>		
+	</ThingDef>	
+
+	<!-- leMat Revolver -->
+
+  <ThingDef ParentName="BaseMakeableGun">
+    <defName>CE_Gun_LeMatRevolverBP</defName>
+    <label>LeMat Revolver</label>
+    <description>LeMat. Nicknamed the "grapeshot revolver", the LeMat features a 9-shot cylinder and a centerline support combined into a shotgun barrel capable of firing a 20 bore shot. A favorite of eccentric officers.\n\n"King Cotton, The Leader of All"</description>
+	<generateAllowChance>0.75</generateAllowChance>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Pistols/LeMat_Blackpowder</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <WorkToMake>11000</WorkToMake>
+      <SightsEfficiency>0.7</SightsEfficiency>
+      <ShotSpread>0.15</ShotSpread>
+      <SwayFactor>1.65</SwayFactor>
+      <Bulk>3.56</Bulk>
+      <Mass>1.40</Mass>
+      <RangedWeapon_Cooldown>0.88</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+	  <WoodLog>5</WoodLog>		
+      <Steel>35</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+	<researchPrerequisite>CEFP_DoubleAction</researchPrerequisite>
+      <recipeUsers>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+		  <skillRequirements>
+			<Crafting>4</Crafting>
+		  </skillRequirements>  
+    </recipeMaker>    
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>2.29</recoilAmount>		  
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_44Shot_Ball</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>18</range>
+        <soundCast>Shot_Revolver</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>9</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>		
+        <reloadTime>4.5</reloadTime>
+        <ammoSet>AmmoSet_44Shot</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+      <li Class="CombatExtended.CompProperties_UnderBarrel">
+          <propsUnderBarrel>
+            <magazineSize>1</magazineSize>
+			<reloadOneAtATime>true</reloadOneAtATime>				
+            <reloadTime>5</reloadTime>
+            <ammoSet>AmmoSet_20GaugeBP_Slow</ammoSet>
+          </propsUnderBarrel>
+          <verbPropsUnderBarrel>
+            <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Bullet_20GaugeBP_Buck</defaultProjectile>
+            <warmupTime>0.6</warmupTime>
+            <range>16</range>
+            <soundCast>Shot_Shotgun_NoRack</soundCast>
+            <soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>9</muzzleFlashScale>
+          </verbPropsUnderBarrel>
+          <propsFireModesUnderBarrel>
+            <aiUseBurstMode>FALSE</aiUseBurstMode>
+            <aiAimMode>AimedShot</aiAimMode>
+            <aimedBurstShotCount>1</aimedBurstShotCount>
+          </propsFireModesUnderBarrel>
+      </li>       
+    </comps>
+	<modExtensions>
+		<li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>1.1,1.1</DrawSize>
+			<DrawOffset>0.01,-0.02</DrawOffset>
+		</li>
+		<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+			<def>MF_StandardMuzzleFalshTwo</def>
+			<drawSize>(0.9,0.7)</drawSize>
+			<offsets>
+				<li>(0.426,0.11)</li>
+			</offsets>
+		</li>			
+	</modExtensions>		
+    <weaponTags>
+      <li>SimpleGun</li>    
+      <li>CE_OneHandedWeapon</li>
+      <li>CE_AI_BROOM</li>
+      <li>CE_Sidearm</li>
+      <li>Revolver</li>
+	  <li>FrontierGunAdvanced</li>	  
+	  <li>NeolithicRangedChief</li>
+	  <li>Auggie_BP_LongArm</li>		  
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+	<relicChance>3</relicChance>	
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- Colt 1860 Army -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1860_Army_</defName>
+		<label>Colt M1860 Army</label>
+		<description>Caliber: .44 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1860_Army</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>30</Steel>
+			<WoodLog>5</WoodLog>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>4000</WorkToMake>
+			<Mass>1.35</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_44CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver1</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.3,1.3)</drawSize>
+				<offsets>
+					<li>(0.31,0.14)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>1.5</generateCommonality> <!-- Everywhere -->
+	</ThingDef>
+
+	<!-- Savage 1861 -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Savage_M1861_Navy_</defName>
+		<label>Savage M1861 Navy</label>
+		<description>Caliber: .36 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Savage_M1861_Navy</texPath>
+			<drawSize>0.9</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>25</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<WoodLog>10</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>4000</WorkToMake>
+			<Mass>1.35</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_36CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver2</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.0,1.0)</drawSize>
+				<offsets>
+					<li>(0.28,0.10)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.10</generateCommonality> <!-- Average -->
+	</ThingDef>	
+
+	<!-- Colt 1861 Navy -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1861_Navy_</defName>
+		<label>Colt M1861 Navy</label>
+		<description>Caliber: .36 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1861_Navy</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>25</Steel>
+			<WoodLog>5</WoodLog>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>4000</WorkToMake>
+			<Mass>1.2</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_36CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver2</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.1,1.1)</drawSize>
+				<offsets>
+					<li>(0.28,0.12)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.5</generateCommonality> <!-- Abundant -->
+	</ThingDef>
+
+	<!-- Colt 1861 Navy Nickel -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_Colt_M1861_Navy_Nickel_</defName>
+		<label>Colt M1861 Navy Nickel</label>
+		<description>Caliber: .36 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_M1861_Navy_Nickel</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<WoodLog>5</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>1.2</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_36CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver2</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.1,1.1)</drawSize>
+				<offsets>
+					<li>(0.28,0.12)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.20</generateCommonality> <!-- Common -->
+	</ThingDef>
+
+  <!-- Spillber&Burr 1862 -->
+
+	<ThingDef ParentName="CGF1_MWP_Revolver_T3">
+		<defName>CGF1_MWP_SpillerBurr_M1862_</defName>
+		<label>Spiller &amp; Burr M1862</label>
+		<description>Caliber: .36 Caliber Ball. 6-round cylinder. Single-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/SpillerBurr_M1862</texPath>
+			<drawSize>0.95</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>Gunsmithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>35</Steel>
+			<WoodLog>5</WoodLog>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>4000</WorkToMake>
+			<Mass>1.2</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Revolver_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_Revolver</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_36CaliberBall</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Revolver2</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.0,1.0)</drawSize>
+				<offsets>
+					<li>(0.32,0.13)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+	</ThingDef>
+  
+	<!-- ColtPeaceMaker -->
+
+ <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_ColtSingleActionArmy1P</defName>
+    <label>Colt Single Action Army</label>
+    <description>The gun that won the West. The Colt 1873 Single Action Army, or "Peacemaker" is one of the most iconic and widespread revolver of American west. Its a good and reliable weapon but quite slow to reload. Chambered in .45 Colt.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Pistols/ColtSingleActionArmy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+	<generateCommonality>0.65</generateCommonality>
+	<recipeMaker>
+		<recipeUsers>
+			<li>CGF1_MWP_Building_Gunsmith_Old</li>
+		</recipeUsers>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</recipeMaker>	
+    <statBases>
+      <WorkToMake>4500</WorkToMake>
+      <SightsEfficiency>0.7</SightsEfficiency>
+      <ShotSpread>0.14</ShotSpread>
+      <SwayFactor>1.45</SwayFactor>
+      <Bulk>3.30</Bulk>
+      <Mass>1.05</Mass>
+      <RangedWeapon_Cooldown>0.89</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>2.81</recoilAmount>	  
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_45Colt_FMJ</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>18</range>
+        <soundCast>Shot_ColtArmySimpleAction</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.95</reloadTime>
+        <ammoSet>AmmoSet_45ColtC</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+    </comps>
+    <weaponTags>
+	  <li>Revolver</li>
+      <li>SimpleGun</li>
+      <li>CE_Sidearm</li>
+	  <li>FrontierGunSimple</li>
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+	<modExtensions>
+		<li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>0.95,0.95</DrawSize>
+			<DrawOffset>0.01,-0.02</DrawOffset>
+		</li>
+		<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+			<def>MF_StandardMuzzleFalshTwo</def>
+			<drawSize>(0.9,0.7)</drawSize>
+			<offsets>
+				<li>(0.47,0.09)</li>
+			</offsets>
+		</li>			
+	</modExtensions>	
+  </ThingDef>
+
+  <!-- Peacemaker long barrel -->
+
+  <!-- Colt Revolver M1878 : possible swap set .38 Long Colt (GGcore) -->
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_Colt1878a</defName>
+    <label>Colt 1878 "Lightning"</label>
+    <description>The Colt model 1878 "Lightning", a double-action revolver and a gun of choice for old West gunslingers, including Doc Hollyday and Billy the Kid.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Pistols/Colt1878</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(0.75,0.75)</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+	<recipeMaker>
+		<recipeUsers>
+			<li>CGF1_MWP_Building_Gunsmith_Old</li>
+		</recipeUsers>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</recipeMaker>   
+    <statBases>
+      <WorkToMake>5000</WorkToMake>
+      <SightsEfficiency>0.70</SightsEfficiency>
+      <ShotSpread>0.14</ShotSpread>
+      <SwayFactor>1.72</SwayFactor>
+      <Bulk>4.07</Bulk>
+      <Mass>1.10</Mass>
+      <RangedWeapon_Cooldown>0.49</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>2.74</recoilAmount>		  
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_45Colt_FMJC</defaultProjectile>
+        <warmupTime>0.6</warmupTime>
+        <range>18</range>
+        <soundCast>Shot_ColtArmySimpleAction</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.95</reloadTime>
+        <ammoSet>AmmoSet_45ColtC</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+    </comps>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>CE_Sidearm</li>
+	  <li>FrontierGunSimple</li>
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+	<modExtensions>
+		<li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>0.75,0.75</DrawSize>
+			<DrawOffset>0.04,0.05</DrawOffset>		
+		</li>
+		<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+			<def>MF_StandardMuzzleFalshTwo</def>
+			<drawSize>(0.9,0.7)</drawSize>
+			<offsets>
+				<li>(0.47,0.09)</li>
+			</offsets>
+		</li>			
+	</modExtensions>	
+  </ThingDef>
+
+  <!-- Colt Open Top -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_OpenTop</defName>
+    <label>Colt Open Top</label>
+    <description>Colt 1871-72. Simple single-action revolver in the low-power .44 rimfire round.</description>
+	<generateAllowChance>0.44</generateAllowChance>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Pistols/Colt_Open_Top_.44_Henry</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <WorkToMake>4500</WorkToMake>
+      <SightsEfficiency>0.7</SightsEfficiency>
+      <ShotSpread>0.14</ShotSpread>
+      <SwayFactor>1.5</SwayFactor>
+      <Bulk>3.30</Bulk>
+      <Mass>1.19</Mass>
+      <RangedWeapon_Cooldown>0.80</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+		<recipeUsers>
+			<li>CGF1_MWP_Building_Gunsmith_Old</li>
+		</recipeUsers>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</recipeMaker>    
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.76</recoilAmount>	  
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_44Henry_FMJ</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>16</range>
+        <soundCast>Shot_ColtArmySimpleAction</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.95</reloadTime>
+        <ammoSet>AmmoSet_44Henry</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+    </comps>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>CE_Sidearm</li>
+	  <li>CE_OneHandedWeapon</li>
+	  <li>FrontierGunSimple</li>
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.00,1.00</DrawSize>
+				<DrawOffset>0.01,-0.02</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.9,0.7)</drawSize>
+				<offsets>
+					<li>(0.47,0.09)</li>
+				</offsets>
+			</li>			
+		</modExtensions>	
+  </ThingDef>  
+
+  <!-- Remington 1875 -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_Remington1875a</defName>
+    <label>Remington 1875</label>
+    <description>Remington 1875. Single-action revolver chambered in the 44-40 carbine cartridge. A convenient sidearm for your 44-40 rifle.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Pistols/cb_Remington1875</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(0.75,0.75)</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+	<recipeMaker>
+		<recipeUsers>
+			<li>CGF1_MWP_Building_Gunsmith_Old</li>
+		</recipeUsers>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</recipeMaker>    
+    <statBases>
+      <WorkToMake>4500</WorkToMake>
+      <SightsEfficiency>0.7</SightsEfficiency>
+      <ShotSpread>0.15</ShotSpread>
+      <SwayFactor>1.48</SwayFactor>
+      <Bulk>3.25</Bulk>
+      <Mass>1.20</Mass>
+      <RangedWeapon_Cooldown>0.89</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>35</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>2.57</recoilAmount>	  
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_44-40Winchester_FMJ_SBC</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>18</range>
+        <soundCast>Shot_ColtArmySimpleAction</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.95</reloadTime>
+        <ammoSet>AmmoSet_44-40Winchester_SBC</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+    </comps>
+    <weaponTags>
+	  <li>Revolver</li> 
+      <li>SimpleGun</li>
+      <li>CE_Sidearm</li>
+	  <li>FrontierGunSimple</li>
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>0.75,0.75</DrawSize>
+				<DrawOffset>0.04,0.05</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.9,0.7)</drawSize>
+				<offsets>
+					<li>(0.47,0.09)</li>
+				</offsets>
+			</li>			
+		</modExtensions>		
+  </ThingDef>
+
+  <!-- Remington 1858 -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_RemingtonNewArmy</defName>
+		<label>Remington New Army</label>
+		<description>Remington 1858 New Army. The Remington revolver uses a one-piece frame that has more strength than older designs, increasing durability, and innate accuracy. This model can fire powerfull .45 Colt metallic cartridge alongside .44 blackpowder balls. An empty cylinder can be swapped with a loaded spare, leading to lightning-fast reloads.\n\n"When I'm paid I always see the job through"</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Remington_New_Army</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+	<recipeMaker>
+		<recipeUsers>
+			<li>CGF1_MWP_Building_Gunsmith_Old</li>
+		</recipeUsers>
+		<researchPrerequisite>
+			<li>Gunsmithing</li>
+		</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</recipeMaker>		
+		<statBases>
+			<WorkToMake>7000</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.14</ShotSpread>
+			<SwayFactor>1.55</SwayFactor>
+			<Bulk>3.37</Bulk>
+			<Mass>1.27</Mass>
+			<RangedWeapon_Cooldown>0.87</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>2.50</recoilAmount>			
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_44Shot_Ball</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>16</range>
+				<soundCast>Shot_Revolver</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>6</magazineSize>				
+				<reloadTime>4.6</reloadTime>
+				<ammoSet>AmmoSet_44Ball45Colt</ammoSet>
+			</li>				
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>  
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+		       	  <li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.1,1.1</DrawSize>
+				<DrawOffset>0.01,-0.02</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.9,0.7)</drawSize>
+				<offsets>
+					<li>(0.47,0.09)</li>
+				</offsets>
+			</li>			
+		</modExtensions>		
+		<weaponTags>
+		 <li>SimpleGun</li>
+         <li>CE_Sidearm</li>
+		 <li>Revolver</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>FrontierGunSimple</li>
+		 <li>Auggie_BP_Sidearm</li>	
+		 <li>Auggie_BP_LongArm</li>			 
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>		
+	</ThingDef>  
+
+	<!-- S&W Model Schofield -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_SWModel3Scofield1P</defName>
+    <label>S&amp;W Model 3 Schofield</label>
+    <description>S&amp;W Model 3 Schofield. The Schofield was used by US cavalry due to its quick eject mechanism. Chambered in .45 Schofield, a slightly less powerful version of .45 Colt.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Pistols/SWModel3Scofield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(0.75,0.75)</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+	<recipeMaker>
+		<recipeUsers>
+			<li>CGF1_MWP_Building_Gunsmith_Old</li>
+		</recipeUsers>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</recipeMaker>    
+    <statBases>
+      <WorkToMake>4500</WorkToMake>
+      <SightsEfficiency>0.7</SightsEfficiency>
+      <ShotSpread>0.15</ShotSpread>
+      <SwayFactor>1.31</SwayFactor>
+      <Bulk>2.24</Bulk>
+      <Mass>0.82</Mass>
+      <RangedWeapon_Cooldown>0.90</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>2.95</recoilAmount>		  
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_45Schofield_FMJ</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>16</range>
+        <soundCast>Shot_ColtArmySimpleAction</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.80</reloadTime>
+        <ammoSet>AmmoSet_45Schofield</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+    </comps>
+    <weaponTags>
+	  <li>Revolver</li>	
+      <li>SimpleGun</li>
+      <li>CE_Sidearm</li>
+	  <li>CE_OneHandedWeapon</li>
+	  <li>FrontierGunSimple</li>
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>0.75,0.75</DrawSize>
+				<DrawOffset>0.04,0.05</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.9,0.7)</drawSize>
+				<offsets>
+					<li>(0.47,0.06)</li>
+				</offsets>
+			</li>			
+		</modExtensions>	
+  </ThingDef>	
+
+  <!-- 2-Bore Pistol -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_LilDuce</defName>
+		<label>Lil Deuce pistol</label>
+		<description>Lil Deuce pistol. 2-Bore Percussion Pistol, when you want somebody to disappear.</description>
+		<generateAllowChance>0.33</generateAllowChance>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/shawtyyy</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>3550</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.20</ShotSpread>
+			<SwayFactor>1.12</SwayFactor>
+			<Bulk>4.00</Bulk>
+			<Mass>3.00</Mass>
+			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>10</WoodLog>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>3</recoilAmount>					
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_Slow2BoreBP_Buck</defaultProjectile>
+				<warmupTime>0.6</warmupTime>
+				<range>16</range>
+				<soundCast>Shot_BPShotgun</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>1</magazineSize>				
+				<reloadTime>8</reloadTime>
+				<ammoSet>AmmoSet_Slow2BoreBP</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+		</recipeMaker>   
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>		
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.15,1.15</DrawSize>
+				<DrawOffset>0.00,-0.00</DrawOffset>
+			</li>
+		</modExtensions>
+		<weaponTags>
+			<li>SimpleGun</li>
+			<li>CE_OneHandedWeapon</li>
+			<li>CE_Sidearm</li>
+			<li>NeolithicRangedHeavy</li>
+			<li>NeolithicRangedChief</li>
+			<li>Auggie_BP_LongArm</li>				
+		</weaponTags>
+	</ThingDef>
+
+	<!-- S&W Model 3 Russian -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_SWModel3Rus</defName>
+    <label>S&amp;W Model 3 Russian</label>
+    <description>S&amp;W Model 3 Russian. Ancient single action-break action pistol. It has a slow fire rate with adequate firepower, the one advantage is that the user can aim faster because of the very high ergonomics of the design.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Pistols/ce_No.3Russian-1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(0.65,0.65)</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+	<generateCommonality>0.65</generateCommonality>
+	<recipeMaker>
+		<recipeUsers>
+			<li>CGF1_MWP_Building_Gunsmith_Old</li>
+		</recipeUsers>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</recipeMaker>	
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <SightsEfficiency>0.7</SightsEfficiency>
+      <ShotSpread>0.16</ShotSpread>
+      <SwayFactor>1.38</SwayFactor>
+      <Bulk>3.00</Bulk>
+      <Mass>1.13</Mass>
+      <RangedWeapon_Cooldown>0.90</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <WoodLog>5</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>2.95</recoilAmount>		  
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_44Russian_FMJ</defaultProjectile>
+        <warmupTime>0.45</warmupTime>
+        <range>16</range>
+        <soundCast>Shot_SARevolver</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>  	
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.80</reloadTime>
+        <ammoSet>AmmoSet_44Russian</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes" />
+    </comps>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>CE_Sidearm</li>
+	  <li>CE_OneHandedWeapon</li>
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>0.65,0.65</DrawSize>
+				<DrawOffset>0.04,0.05</DrawOffset>
+				<DropCasingWhenReload>true</DropCasingWhenReload>
+				<CasingOffset>-0.0,0.10</CasingOffset>
+				<AdvancedCasingVariables>true</AdvancedCasingVariables>
+				<CasingRotationRandomRange>20</CasingRotationRandomRange>
+				<CasingSpeedOverrideRange>1.5~2</CasingSpeedOverrideRange>
+				<CasingAngleOffset>-135</CasingAngleOffset>
+				<CasingLifeTimeMultiplier>2</CasingLifeTimeMultiplier>					
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(0.9,0.7)</drawSize>
+				<offsets>
+					<li>(0.37,0.06)</li>
+				</offsets>
+			</li>			
+		</modExtensions>	
+  </ThingDef>
+
+  <!-- Nagant Revolvers -->
+
+	<ThingDef ParentName="BaseHumanMakeableGun_CE">
+		<defName>CE_Gun_NagantM1895a</defName>
+		<label>Nagant Revolver</label>
+		<description>Nagant M1895. Ancient double-action revolver. The gun uses a 7-round cylinder that loads one by one via an ejection rod. The old revolver also takes advantage of a gas-sealed cartridge/cylinder, giving higher velocity than others in its class. Owning one used to be a sign of power.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Nagant_M1895_7.62x38mmR</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>5000</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.17</ShotSpread>
+			<SwayFactor>1.05</SwayFactor>
+			<Bulk>2.35</Bulk>
+			<Mass>0.80</Mass>
+			<RangedWeapon_Cooldown>0.50</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>	
+			<Steel>20</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>2.29</recoilAmount>			
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_762x38mmR_FMJ</defaultProjectile>
+				<warmupTime>0.6</warmupTime>
+				<range>16</range>
+				<soundCast>Shot_HeavySMG</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>7</magazineSize>
+				<reloadOneAtATime>true</reloadOneAtATime>				
+				<reloadTime>1</reloadTime>
+				<ammoSet>AmmoSet_NagantSwap</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_DoubleAction</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker> 
+			<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.55</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2.02</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<weaponTags>
+         <li>SimpleGun</li>
+         <li>CE_Sidearm</li>
+		 <li>CE_AI_Pistol</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>Revolver</li>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>0.94,0.94</DrawSize>
+				<DrawOffset>0.0,-0.08</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.6,0.4)</drawSize>
+				<offsets>
+					<li>(0.35,0.045)</li>
+				</offsets>
+			</li>				
+		</modExtensions>
+	</ThingDef>
+
+	<!--  Nagant Revolver Bramit  -->
+
+	<!-- <ThingDef ParentName="BaseHumanMakeableGun_CE">
+		<defName>CE_Gun_NagantM1895b</defName>
+		<label>Nagant Revolver Bramit</label>
+		<description>Nagant M1895. Ancient double-action revolver. The gun uses a 7-round cylinder that loads one by one via an ejection rod. The old revolver also takes advantage of a gas-sealed cartridge/cylinder, giving higher velocity than others in its class. This model uses a detachable suppressor.</description>
+		<generateAllowChance>0.75</generateAllowChance>		
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Pistols/Nagant_M1895_Bramit_7.62x38mmR</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>6000</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.17</ShotSpread>
+			<SwayFactor>1.05</SwayFactor>
+			<Bulk>2.35</Bulk>
+			<Mass>0.80</Mass>
+			<RangedWeapon_Cooldown>0.50</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>	
+			<Steel>25</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.81</recoilAmount>			
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_762x38mmR_FMJ</defaultProjectile>
+				<warmupTime>0.6</warmupTime>
+				<range>12</range>
+				<soundCast>Shot_NagantRS</soundCast>
+				<muzzleFlashScale>0</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>7</magazineSize>
+				<reloadOneAtATime>true</reloadOneAtATime>				
+				<reloadTime>1</reloadTime>
+				<ammoSet>AmmoSet_762x38mmR</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		  <researchPrerequisite>Gunsmithing</researchPrerequisite>
+		  <skillRequirements>
+			<Crafting>3</Crafting>
+		  </skillRequirements>		  
+		</recipeMaker>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.55</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2.02</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.54</cooldownTime>
+				<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<thingSetMakerTags>
+			<li>RewardStandardQualitySuper</li>
+		</thingSetMakerTags>			
+		<weaponTags>
+         <li>SimpleGun</li>		
+         <li>CE_Sidearm</li>
+		 <li>CE_AI_Pistol</li>
+         <li>CE_OneHandedWeapon</li>
+		 <li>Revolver</li>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>0.96,0.96</DrawSize>
+				<DrawOffset>0.0,-0.08</DrawOffset>
+			</li>
+		</modExtensions>
+		<equippedStatOffsets>
+			  <HuntingStealth>0.15</HuntingStealth>
+		</equippedStatOffsets>			
+	</ThingDef>
+ -->
+</Defs>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>36Shot_Ball</defName>
+		<label>.36 Shot</label>
+		<parent>AmmoPistols</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberPistol</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_36Shot</defName>
+		<label>.36 Paper cartridge</label>
+		<ammoTypes>
+			<Ammo_36Shot_Ball>Bullet_36Shot_Ball</Ammo_36Shot_Ball>
+			<Ammo_36Shot_Conical>Bullet_36Shot_Conical</Ammo_36Shot_Conical>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+	<ThingDef Class="CombatExtended.AmmoDef" Name="36ShotBase" ParentName="SmallAmmoBase" Abstract="True">
+		<description>Paper cartridge used by muzzle loading revolvers</description>
+		<statBases>
+			<Mass>0.012</Mass>
+			<Bulk>0.01</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_FueledSmithy</li>
+			<li>CE_AutoEnableCrafting_ElectricSmithy</li>
+		</tradeTags>
+		<thingCategories>
+			<li>36Shot_Ball</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="36ShotBase">
+		<defName>Ammo_36Shot_Ball</defName>
+		<label>.36 Ball</label>
+		<graphicData>
+			<texPath>Things/Ammo/Medieval/Pistol/BallRevolver</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.05</MarketValue>
+		</statBases>
+		<ammoClass>MusketBall</ammoClass>
+	</ThingDef>
+	
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="36ShotBase">
+		<defName>Ammo_36Shot_Conical</defName>
+		<label>.36 Conical</label>
+		<graphicData>
+			<texPath>Things/Ammo/Medieval/Pistol/ConicalRevolver</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.08</MarketValue>
+		</statBases>
+		<ammoClass>Conical</ammoClass>
+	</ThingDef>
+
+	<!-- ================== Projectile Base ================== -->
+	<ThingDef Name="36ShotBullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<dropsCasings>false</dropsCasings>
+		</projectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles  ================== -->
+	<ThingDef ParentName="36ShotBullet">
+		<defName>Bullet_36Shot_Ball</defName>
+		<label>.36 Ball</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>61</speed>
+			<damageAmountBase>8</damageAmountBase>
+			<armorPenetrationSharp>4.0</armorPenetrationSharp>
+			<armorPenetrationBlunt>4.7</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef>
+	
+	<ThingDef ParentName="36ShotBullet">
+		<defName>Bullet_36Shot_Conical</defName>
+		<label>.36 Conical</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>43</speed>
+			<damageAmountBase>6</damageAmountBase>
+			<armorPenetrationSharp>6.0</armorPenetrationSharp>
+			<armorPenetrationBlunt>4.7</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_36Shot_Ball</defName>
+		<label>make .36 Ball paper Cartridges x500</label>
+		<description>Craft 500 .36 Ball Cartridges.</description>
+		<jobString>Making .36 Ball Cartridges.</jobString>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+		<workAmount>1200</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>12</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+		    </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_36Shot_Ball>500</Ammo_36Shot_Ball>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_36Shot_Conical</defName>
+		<label>make .36 Conical paper Cartridges x500</label>
+		<description>Craft 500 .36 Conical Cartridges.</description>
+		<jobString>Making .36 Conical Cartridges.</jobString>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+		<workAmount>1400</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>14</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+		    </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_36Shot_Conical>500</Ammo_36Shot_Conical>
+		</products>
+	</RecipeDef>
+
+</Defs>

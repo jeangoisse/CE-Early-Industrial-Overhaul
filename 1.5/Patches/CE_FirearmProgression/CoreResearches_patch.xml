@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!-- Gunsmithing = Single-Action -->
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/label</xpath>
+				<value>
+					<label>Single-action</label>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/baseCost</xpath>
+				<value>
+					<baseCost>250</baseCost>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/description</xpath>
+				<value>
+					<description>Create basic firearms that require manual manipulation of the hammer</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]</xpath>
+				<value>
+					<tab>CEFPTab</tab>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/researchViewX</xpath>
+				<value>
+					<researchViewX>0</researchViewX>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/researchViewY</xpath>
+				<value>
+					<researchViewY>1.4</researchViewY>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ResearchProjectDef[defName="Gunsmithing"]/prerequisites</xpath>
+				<value>
+					<prerequisites>
+						<li>CE_Gunpowder</li>
+						<li>CEFP_PercussionCap</li>
+					</prerequisites>
+				</value>
+			</li>			
+		</operations>
+	</Operation>	
+
+
+
+
+</Patch>

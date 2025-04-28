@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>44Shot_Ball</defName>
+		<label>.44 Shot</label>
+		<parent>AmmoPistols</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberPistol</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_44Shot</defName>
+		<label>.44 Paper cartridge</label>
+		<ammoTypes>
+			<Ammo_44Shot_Ball>Bullet_44Shot_Ball</Ammo_44Shot_Ball>
+			<Ammo_44Shot_Conical>Bullet_44Shot_Conical</Ammo_44Shot_Conical>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_44ShotCarbine</defName>
+		<label>.44 Paper cartridge</label>
+		<ammoTypes>
+			<Ammo_44Shot_Ball>Bullet_44Shot_BallCarbine</Ammo_44Shot_Ball>
+			<Ammo_44Shot_Conical>Bullet_44Shot_ConicalCarbine</Ammo_44Shot_Conical>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>	
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_44Ball45Colt</defName>
+		<label>.44 Swap Cylinder</label>
+		<ammoTypes>
+			<Ammo_44Shot_Ball>Bullet_44Shot_Ball</Ammo_44Shot_Ball>
+			<Ammo_44Shot_Conical>Bullet_44Shot_Conical</Ammo_44Shot_Conical>
+			<Ammo_45Colt_FMJ>Bullet_45Colt_FMJ</Ammo_45Colt_FMJ>
+			<Ammo_45Colt_AP>Bullet_45Colt_AP</Ammo_45Colt_AP>
+			<Ammo_45Colt_HP>Bullet_45Colt_HP</Ammo_45Colt_HP>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_44ShotWalker</defName>
+		<label>.44 Shot</label>
+		<ammoTypes>
+			<Ammo_44Shot_BallWalker>Bullet_44Shot_BallWalker</Ammo_44Shot_BallWalker>
+			<Ammo_44Shot_Ball>Bullet_44Shot_Ball</Ammo_44Shot_Ball>
+			<Ammo_44Shot_Conical>Bullet_44Shot_Conical</Ammo_44Shot_Conical>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_44ShotWalkerCarbine</defName>
+		<label>.44 Shot</label>
+		<ammoTypes>
+			<Ammo_44Shot_BallWalker>Bullet_44Shot_BallWalkerCarbine</Ammo_44Shot_BallWalker>
+			<Ammo_44Shot_Ball>Bullet_44Shot_BallCarbine</Ammo_44Shot_Ball>
+			<Ammo_44Shot_Conical>Bullet_44Shot_ConicalCarbine</Ammo_44Shot_Conical>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>	
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_44ShotRifle</defName>
+		<label>.44 Shot</label>
+		<ammoTypes>
+			<Ammo_44Shot_BallWalker>Bullet_44Shot_BallWalkerCarbine</Ammo_44Shot_BallWalker>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>	
+	
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_44ShotPistol</defName>
+		<label>.44 Shot</label>
+		<ammoTypes>
+			<Ammo_44Shot_BallWalker>Bullet_44Shot_BallWalker</Ammo_44Shot_BallWalker>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>		
+
+	<!-- ==================== Ammo ========================== -->
+	<ThingDef Class="CombatExtended.AmmoDef" Name="44ShotBase" ParentName="SmallAmmoBase" Abstract="True">
+		<description>Paper cartridge used by muzzle loading revolvers</description>
+		<statBases>
+			<Mass>0.02</Mass>
+			<Bulk>0.03</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_FueledSmithy</li>
+			<li>CE_AutoEnableCrafting_ElectricSmithy</li>
+		</tradeTags>
+		<thingCategories>
+			<li>44Shot_Ball</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="44Shot60Base" ParentName="SmallAmmoBase" Abstract="True">
+		<description>.44 shot used by heavy revolvers and light rifles</description>
+		<statBases>
+			<Mass>0.087</Mass>
+			<Bulk>0.06</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_FueledSmithy</li>
+			<li>CE_AutoEnableCrafting_ElectricSmithy</li>
+		</tradeTags>
+		<thingCategories>
+			<li>44Shot_Ball</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="44ShotBase">
+		<defName>Ammo_44Shot_Ball</defName>
+		<label>.44 Ball</label>
+		<graphicData>
+			<texPath>Things/Ammo/Medieval/Pistol/BallRevolver</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.35</MarketValue>
+		</statBases>
+		<ammoClass>MusketBall</ammoClass>
+	</ThingDef>
+	
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="44ShotBase">
+		<defName>Ammo_44Shot_Conical</defName>
+		<label>.44 Conical</label>
+		<graphicData>
+			<texPath>Things/Ammo/Medieval/Pistol/ConicalRevolver</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.40</MarketValue>
+		</statBases>
+		<ammoClass>Conical</ammoClass>
+	</ThingDef>
+	
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="44Shot60Base">
+		<defName>Ammo_44Shot_BallWalker</defName>
+		<label>.44 Ball (60 Grains)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Medieval/Musket/Paper</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.38</MarketValue>
+		</statBases>
+		<tradeTags>
+			<li>CE_PreIndustrialAmmo</li>
+		</tradeTags>
+		<techLevel>Medieval</techLevel>
+		<ammoClass>MusketBall</ammoClass>
+	</ThingDef>
+
+	<!-- ================== Projectile Base ================== -->
+	<ThingDef Name="44ShotBullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<dropsCasings>false</dropsCasings>
+		</projectile>
+	</ThingDef>
+	
+
+	<!-- ================== Projectiles  ================== -->
+	<ThingDef ParentName="44ShotBullet">
+		<defName>Bullet_44Shot_Ball</defName>
+		<label>.44 Ball</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>65</speed>
+			<damageAmountBase>11</damageAmountBase>
+			<armorPenetrationSharp>4.0</armorPenetrationSharp>
+			<armorPenetrationBlunt>9.26</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef>
+	
+	<ThingDef ParentName="44ShotBullet">
+		<defName>Bullet_44Shot_Conical</defName>
+		<label>.44 Conical</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>52</speed>
+			<damageAmountBase>8</damageAmountBase>
+			<armorPenetrationSharp>6.0</armorPenetrationSharp>
+			<armorPenetrationBlunt>9.26</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef> 
+	
+	<ThingDef ParentName="44ShotBullet">
+		<defName>Bullet_44Shot_BallCarbine</defName>
+		<label>.44 Ball</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>80</speed>
+			<damageAmountBase>13</damageAmountBase>
+			<armorPenetrationSharp>5.0</armorPenetrationSharp>
+			<armorPenetrationBlunt>14.4</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef>	
+	
+	<ThingDef ParentName="44ShotBullet">
+		<defName>Bullet_44Shot_ConicalCarbine</defName>
+		<label>.44 Conical</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>65</speed>
+			<damageAmountBase>10</damageAmountBase>
+			<armorPenetrationSharp>7.5</armorPenetrationSharp>
+			<armorPenetrationBlunt>14.4</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef>		
+	
+	<ThingDef ParentName="44ShotBullet">
+		<defName>Bullet_44Shot_BallWalker</defName>
+		<label>.44 Ball</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>76</speed>
+			<damageAmountBase>13</damageAmountBase>
+			<armorPenetrationSharp>4.0</armorPenetrationSharp>
+			<armorPenetrationBlunt>13.38</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef>
+	
+	<ThingDef ParentName="44ShotBullet">
+		<defName>Bullet_44Shot_BallWalkerCarbine</defName>
+		<label>.44 Ball</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>106</speed>
+			<damageAmountBase>16</damageAmountBase>
+			<armorPenetrationSharp>6.0</armorPenetrationSharp>
+			<armorPenetrationBlunt>26.02</armorPenetrationBlunt>
+		</projectile>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_44Shot_Ball</defName>
+		<label>make .44 Ball paper Cartridges x500</label>
+		<description>Craft 500 .44 Ball Cartridges.</description>
+		<jobString>Making .44 Ball Cartridges.</jobString>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+		<workAmount>1800</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>18</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+		    </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_44Shot_Ball>500</Ammo_44Shot_Ball>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_44Shot_Conical</defName>
+		<label>make .44 Conical paper Cartridges x500</label>
+		<description>Craft 500 .44 Conical Cartridges.</description>
+		<jobString>Making .44 Conical Cartridges.</jobString>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+		<workAmount>2000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+		    </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_44Shot_Conical>500</Ammo_44Shot_Conical>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_44Shot_BallWalker</defName>
+		<label>make .44 ball ammo (60 Grains) x500</label>
+		<description>Craft 500 .44 ball (60 Grains).</description>
+		<jobString>Making .44 ball (60 Grains).</jobString>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+		<workAmount>2000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+		    </li>			
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>WoodLog</li>				
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_44Shot_BallWalker>500</Ammo_44Shot_BallWalker>
+		</products>
+	</RecipeDef>
+
+
+</Defs>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+ 
+  <RecipeDef ParentName="GrenadeRecipeBase">
+    <defName>CE_AUG_MakeAntiKetchum</defName>
+    <label>make Ketchum grenades x10</label>
+    <description>Craft 10 Ketchum grenades.</description>
+    <jobString>Making Ketchum grenades.</jobString>
+	<researchPrerequisites>
+		<li>CE_Gunpowder</li>
+	</researchPrerequisites>	
+	<recipeUsers>
+		<li>ElectricSmithy</li>
+		<li>FueledSmithy</li>
+	</recipeUsers>	
+    <workAmount>4500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FSX</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+        <li>FSX</li>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Weapon_CE_Ketchum>10</Weapon_CE_Ketchum>
+    </products>
+  </RecipeDef> 
+
+</Defs>

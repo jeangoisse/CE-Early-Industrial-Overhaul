@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Dreyse M1860 Fusilier. todo = add more versions -->
+
+	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T4">
+		<defName>CGF1_MWP_Dreyse_NeedleGun_M1860_Fusilier_</defName>
+		<label>Dreyse Needle Gun M1860 Fusilier</label>
+		<description>Caliber: 15.4mm Dreyse Needle. 1-round chamber. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/Dreyse_NeedleGun_M1860_Fusilier</texPath>
+			<drawSize>1.10</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>10900</WorkToMake>
+			<Mass>3.95</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_IA1</li>
+			<li>CGF1_GunsGalore_IA1_Rifle</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_154mmDreyseNeedle_Rifle</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>36.9</range>
+				<soundCast>CGF1_MWP_SFX_Musket3</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.68,0.07)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.10</generateCommonality> <!-- Average -->
+	</ThingDef>
+
+	<!-- Chassepot M1866 + Bayo -->
+
+	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T4">
+		<defName>CGF1_MWP_Chassepot_1866_</defName>
+		<label>Chassepot 1866</label>
+		<description>Caliber: 11mm Chassepot. 1-round chamber. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/Chassepot_1866</texPath>
+			<drawSize>1.10</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>60</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>11500</WorkToMake>
+			<Mass>4.64</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_IA1</li>
+			<li>CGF1_GunsGalore_IA1_Rifle</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_11mmChassepot_Rifle</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>36.9</range>
+				<soundCast>CGF1_MWP_SFX_Musket2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Attach bayonet</label>
+						<description>Bayonet is not currently attached. Click to install.</description>
+						<texPath>CGF1/UI/Fix_Bayonet</texPath>
+						<weapon>CGF1_MWP_Chassepot_1866_Bayonet_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>200</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.68,0.07)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.5</generateCommonality> <!-- Abundant -->
+	</ThingDef>
+	
+	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T4">
+		<defName>CGF1_MWP_Chassepot_1866_Bayonet_</defName>
+		<label>Chassepot 1866 (Bayonet)</label>
+		<description>Caliber: 11mm Chassepot. 1-round chamber. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/UP/Chassepot_1866_Bayonet</texPath>
+			<drawSize>1.45</drawSize>
+		</graphicData>
+		<recipeMaker Inherit="False"/>
+		<costList>
+			<Steel>65</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>4.74</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags Inherit="False"/>
+		<tradeTags Inherit="False">
+			<li>CGF1_GunsGalore_NoSpawn</li>
+		</tradeTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_11mmChassepot_Rifle</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>36.9</range>
+				<soundCast>CGF1_MWP_SFX_Musket2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>bayonet</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Remove bayonet</label>
+						<description>Bayonet is attached. Click to uninstall.</description>
+						<texPath>CGF1/UI/Remove_Bayonet</texPath>
+						<weapon>CGF1_MWP_Chassepot_1866_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>180</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.44,0.06)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+		<thingSetMakerTags Inherit="False"/>
+	</ThingDef>
+
+
+	<!-- Berdan M1870  + Bayo. todo = Cav version + Cossack Version -->
+
+	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T4">
+		<defName>CGF1_MWP_Berdan_Model1870_</defName>
+		<label>Berdan Model 1870</label>
+		<description>Caliber: 10.75x58mmR Berdan. 1-round chamber. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/Berdan_Model1870</texPath>
+			<drawSize>1.10</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>60</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>4.2</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Old</li>
+			<li>CGF1_Rifle_Civilian</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_IA1</li>
+			<li>CGF1_GunsGalore_IA1_Rifle</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_1075x58mmR_Berdan_Rifle</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>36.9</range>
+				<soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Attach bayonet</label>
+						<description>Bayonet is not currently attached. Click to install.</description>
+						<texPath>CGF1/UI/Fix_Bayonet</texPath>
+						<weapon>CGF1_MWP_Berdan_Model1870_Bayonet_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>200</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.68,0.07)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.10</generateCommonality> <!-- Average -->
+	</ThingDef>
+	
+	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T4">
+		<defName>CGF1_MWP_Berdan_Model1870_Bayonet_</defName>
+		<label>Berdan Model 1870 (Bayonet)</label>
+		<description>Caliber: 10.75x58mmR Berdan. 1-round chamber. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/UP/Berdan_Model1870_Bayonet</texPath>
+			<drawSize>1.45</drawSize>
+		</graphicData>
+		<recipeMaker Inherit="False"/>
+		<costList>
+			<Steel>65</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>4.3</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags Inherit="False"/>
+		<tradeTags Inherit="False">
+			<li>CGF1_GunsGalore_NoSpawn</li>
+		</tradeTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_1075x58mmR_Berdan_Rifle</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>36.9</range>
+				<soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>bayonet</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Remove bayonet</label>
+						<description>Bayonet is attached. Click to uninstall.</description>
+						<texPath>CGF1/UI/Remove_Bayonet</texPath>
+						<weapon>CGF1_MWP_Berdan_Model1870_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>180</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.50,0.13)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.0125</generateCommonality> <!-- Rare -->
+		<thingSetMakerTags Inherit="False"/>
+	</ThingDef>	
+
+	<!-- Martini Henry 1871, text imported CHECK STATS + SOUNDS 
+
+			 AmmoSet = unused .577-450 cartridge from Gun Galore Core. testing.
+
+-->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_martini_henry</defName>
+    <label>Martini Henry</label>
+    <description>The emblematic english service-rifle during the Victorian era. Used overseas in Africa or India the power of the Martini Henry has been well documented for stopping both big game and people alike.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/WWEmartini_henry</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <SightsEfficiency>1</SightsEfficiency>
+      <ShotSpread>0.03</ShotSpread>
+      <SwayFactor>1.58</SwayFactor>
+      <Bulk>11.50</Bulk>
+      <Mass>3.65</Mass>
+      <RangedWeapon_Cooldown>1.27</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.74</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_577450MartiniHenry_FMJ</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>55</range>
+        <soundCast>Shot_singleshotrifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+	  <li>SimpleGun</li>
+	  <li>CE_AI_SR</li>
+    </weaponTags>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>1</magazineSize>
+        <reloadTime>4.35</reloadTime>
+        <ammoSet>AmmoSet_577450MartiniHenry</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+    <recipeMaker>
+      <researchPrerequisites>
+      	<li>CEFP_LeverAction</li>
+      	<li>CEFP_BreechLoading2</li>
+    	</researchPrerequisites>
+    </recipeMaker>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.02</cooldownTime>
+        <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="CombatExtended.GunDrawExtension">
+        <DrawSize>1.3,1.3</DrawSize>
+        <DrawOffset>0.1,0.0</DrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>	
+
+ <!-- ==================== Lebel 1886 CHECK SOUNDS + AMMO ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_1886Lebel</defName>
+    <label>Lebel 1886</label>
+    <description>The Lebel was one of the first firearms to take advantage of smokeless powder. Capable of holding eight high powered cartridges only made more powerful with the advent of smokeless powder.\n"Halte-là ! Verdun on ne passe pas !"</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/lebel1886</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>14000</WorkToMake>
+      <SightsEfficiency>1</SightsEfficiency>
+      <ShotSpread>0.02</ShotSpread>
+      <SwayFactor>1.68</SwayFactor>
+      <Bulk>12.4</Bulk>
+      <Mass>3.65</Mass>
+      <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.65</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_8x50mmRLebel_FMJ</defaultProjectile>
+        <warmupTime>1.05</warmupTime>
+        <range>64</range>
+        <soundCast>Shot_lebel</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+		 <li>SimpleGun</li>
+		<li>CE_AI_AssaultWeapon</li>
+    </weaponTags>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>8</magazineSize>
+		<reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>1.70</reloadTime>
+        <ammoSet>AmmoSet_8x50mmRLebel</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
+    </recipeMaker>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.02</cooldownTime>
+        <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="CombatExtended.GunDrawExtension">
+        <DrawSize>1.3,1.3</DrawSize>
+        <DrawOffset>0.1,0.0</DrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- Krags-Jorgensen 1892 US CHECK SOUND + AMMO 
+
+			 Make bayo using gg system
+
+			 add sniper version
+
+	-->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>HuntRim_Gun_krag</defName>
+    <label>Springfield M1892 Krag</label>
+    <description>The Springfield M1892 Krag is a bolt-action rifle that holds five rounds in its internal magazine, and one in its chamber. Its magazine lid allows the wielder to top it up from the side, without opening the bolt, and ejecting the chambered round.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/krag</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>14500</WorkToMake>
+      <SightsEfficiency>1</SightsEfficiency>
+      <ShotSpread>0.02</ShotSpread>
+      <SwayFactor>1.68</SwayFactor>
+      <Bulk>12.40</Bulk>
+      <Mass>3.05</Mass>
+      <RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.01</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_40Krag_FMJ</defaultProjectile>
+        <warmupTime>0.95</warmupTime>
+        <range>54</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+		<li>CE_AI_AR</li>
+    </weaponTags>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>5</magazineSize>
+		<reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>1.00</reloadTime>
+        <ammoSet>AmmoSet_40Krag</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
+    </recipeMaker>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.02</cooldownTime>
+        <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="CombatExtended.GunDrawExtension">
+        <DrawSize>1.5,1.5</DrawSize>
+        <DrawOffset>0.1,0.0</DrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- M1917 Enfield (armory) -->
+
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>CE_Gun_M1917Enfield</defName>
+		<label>M1917 Enfield</label>
+		<description>Ancient bolt-action rifle. Fires a full-power rifle cartridge and is a popular choice in the rimworlds due to its shear firepower and simplicity.</description>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Rifles/M1917</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.2,1.2)</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<SightsEfficiency>1.0</SightsEfficiency>
+			<ShotSpread>0.04</ShotSpread>
+			<SwayFactor>1.64</SwayFactor>
+			<Bulk>11.8</Bulk>
+			<Mass>4.17</Mass>
+			<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<Steel>55</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<WoodLog>15</WoodLog>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>2.07</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_3006Springfield_FMJ</defaultProjectile>
+				<warmupTime>1.1</warmupTime>
+				<range>55</range>
+				<soundCast>Shot_BoltActionRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<thingSetMakerTags>
+			<li>RewardStandardQualitySuper</li>
+		</thingSetMakerTags>
+		<weaponTags>
+			<li>SimpleGun</li>
+		</weaponTags>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>6</magazineSize>
+				<reloadTime>4.3</reloadTime>
+				<ammoSet>AmmoSet_3006Springfield</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+			<researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.55</cooldownTime>
+				<chanceFactor>1.5</chanceFactor>
+				<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2.02</cooldownTime>
+				<armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.55</cooldownTime>
+				<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawOffset>0.1,0.0</DrawOffset>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+
+  <!-- Gewehr 88-05 + Bayo -->
+
+<!-- 	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T2">
+		<defName>CGF1_MWP_Gewehr_1888_05_</defName>
+		<label>Gewehr 1888/05</label>
+		<description>Caliber: 7.92x57mm Mauser. 5-round internal mag. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/Gewehr_1888_05</texPath>
+			<drawSize>1.07</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisite>CGF1_MWP_Research_T5_LateIndustrialFirearms</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>65</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>15000</WorkToMake>
+			<Mass>3.9</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
+			<RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Civilian</li>
+			<li>CGF1_Rifle_Military</li>
+			<li>CGF1_Rifle_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_GreatWar_CentralPowers</li>
+			<li>CGF1_GunsGalore_GreatWar_CentralPowers_Rifle</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_792x57mmMauser_Rifle</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>36.9</range>
+				<soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Attach bayonet</label>
+						<description>Bayonet is not currently attached. Click to install.</description>
+						<texPath>CGF1/UI/Fix_Bayonet</texPath>
+						<weapon>CGF1_MWP_Gewehr_1888_05_Bayonet_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>200</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.68,0.07)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.20</generateCommonality> 
+		<thingSetMakerTags>
+			<li>CGF1_GunsGalore_RewardAncient_Common</li>
+		</thingSetMakerTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T2">
+		<defName>CGF1_MWP_Gewehr_1888_05_Bayonet_</defName>
+		<label>Gewehr 1888/05 (Bayonet)</label>
+		<description>Caliber: 7.92x57mm Mauser. 5-round internal mag. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/UP/Gewehr_1888_05_Bayonet</texPath>
+			<drawSize>1.32</drawSize>
+		</graphicData>
+		<recipeMaker Inherit="False"/>
+		<costList>
+			<Steel>65</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>15000</WorkToMake>
+			<Mass>4</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
+			<RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Civilian</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<tradeTags Inherit="False">
+			<li>CGF1_GunsGalore_NoSpawn</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_792x57mmMauser_Rifle</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>36.9</range>
+				<soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>bayonet</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Remove bayonet</label>
+						<description>Bayonet is attached. Click to uninstall.</description>
+						<texPath>CGF1/UI/Remove_Bayonet</texPath>
+						<weapon>CGF1_MWP_Gewehr_1888_05_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>180</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.63,0.09)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.05</generateCommonality> 
+		<thingSetMakerTags Inherit="False"/>
+	</ThingDef> -->
+
+	<!-- Gewehr 88-05 Bayo + Scope -->
+
+<!-- 	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T2">
+		<defName>CGF1_MWP_Gewehr_1888_05_Scope_</defName>
+		<label>Gewehr 1888/05 (Scope)</label>
+		<description>Caliber: 7.92x57mm Mauser. 5-round internal mag. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/Gewehr_1888_05_Scope</texPath>
+			<drawSize>1.07</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisite>CGF1_MWP_Research_T5_LateIndustrialFirearms</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>70</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<Mass>4.2</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
+			<RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Civilian</li>
+			<li>CGF1_Rifle_Marksman</li>
+			<li>CGF1_SniperRifle</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_GreatWar_CentralPowers</li>
+			<li>CGF1_GunsGalore_GreatWar_CentralPowers_Rifle</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_792x57mmMauser_Rifle</defaultProjectile>
+				<warmupTime>2.2</warmupTime>
+				<range>42.9</range>
+				<soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Attach bayonet</label>
+						<description>Bayonet is not currently attached. Click to install.</description>
+						<texPath>CGF1/UI/Fix_Bayonet</texPath>
+						<weapon>CGF1_MWP_Gewehr_1888_05_Scope_Bayonet_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>200</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.68,0.07)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.05</generateCommonality> 
+	</ThingDef>
+	
+	<ThingDef ParentName="CGF1_MWP_Rifle_BoltAction_T2">
+		<defName>CGF1_MWP_Gewehr_1888_05_Scope_Bayonet_</defName>
+		<label>Gewehr 1888/05 (Scope Bayonet)</label>
+		<description>Caliber: 7.92x57mm Mauser. 5-round internal mag. Bolt-Action.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Rifles/UP/Gewehr_1888_05_Scope_Bayonet</texPath>
+			<drawSize>1.32</drawSize>
+		</graphicData>
+		<recipeMaker Inherit="False"/>
+		<costList>
+			<Steel>70</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<Mass>4.3</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
+			<RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags Inherit="False"/>
+		<weaponClasses>
+			<li>LongShots</li>
+		</weaponClasses>
+		<tradeTags Inherit="False">
+			<li>CGF1_GunsGalore_NoSpawn</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_792x57mmMauser_Rifle</defaultProjectile>
+				<warmupTime>2.2</warmupTime>
+				<range>42.9</range>
+				<soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>bayonet</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Remove bayonet</label>
+						<description>Bayonet is attached. Click to uninstall.</description>
+						<texPath>CGF1/UI/Remove_Bayonet</texPath>
+						<weapon>CGF1_MWP_Gewehr_1888_05_Scope_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>180</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.8,0.8)</drawSize>
+				<offsets>
+					<li>(0.63,0.09)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.0</generateCommonality> 
+		<thingSetMakerTags Inherit="False"/>
+	</ThingDef>	 -->
+
+
+</Defs>

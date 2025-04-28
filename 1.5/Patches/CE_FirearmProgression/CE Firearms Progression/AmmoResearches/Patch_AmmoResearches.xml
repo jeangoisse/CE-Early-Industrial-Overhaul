@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Black powder ammos = CE Gunpowder  -->
+
+					<!-- CEFP Metallic Cartridge = CE Gunpowder req -->
+
+	<!-- .45 Colt (base CE) -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_45Colt_FMJ" or
+			defName = "MakeAmmo_45Colt_AP" or
+			defName = "MakeAmmo_45Colt_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- 7.62x38mmR (base CE) -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_762x38mmR_FMJ" or
+			defName = "MakeAmmo_762x38mmR_AP" or
+			defName = "MakeAmmo_762x38mmR_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+							<!-- Gun Galore Industrial Ammos -->
+
+	<!-- AMMOSETS -->		
+
+	<Operation Class="PatchOperationAttributeRemove">
+	  <xpath>Defs/CombatExtended.AmmoSetDef[
+	  		defName="AmmoSet_154mmDreyseNeedle" or
+	  		defName="AmmoSet_11mmChassepot" or
+			defName="AmmoSet_1217x42mmRF" or
+			defName="AmmoSet_1075x58mmRBerdan" or
+			defName="AmmoSet_577450MartiniHenry"]
+	  </xpath>
+	  <attribute>MayRequire</attribute>
+	</Operation>
+
+	<!-- Base ammo  -->
+
+	<Operation Class="PatchOperationAttributeRemove">
+	  <xpath>Defs/CombatExtended.AmmoDef[
+	  		defName="154mmDreyseNeedleBase" or
+	  		defName="11mmChassepotBase" or
+			defName="1217x42mmRFBase" or
+			defName="1075x58mmRBerdanBase" or
+			defName="577450MartiniHenryBase"]
+	  </xpath>
+	  <attribute>MayRequire</attribute>
+	</Operation>
+
+	<!-- Ammo -->
+
+	<Operation Class="PatchOperationAttributeRemove">
+	  <xpath>Defs/CombatExtended.AmmoDef[
+	  		defName="Ammo_154mmDreyseNeedle_FMJ" or
+	  		defName="Ammo_11mmChassepot_FMJ" or
+	  		defName="Ammo_1217x42mmRF_FMJ" or
+	  		defName="Ammo_1075x58mmRBerdan_FMJ" or	  		
+	  		defName="Ammo_577450MartiniHenry_FMJ" or	
+	  		defName="Ammo_577450MartiniHenry_AP" or	
+	  		defName="Ammo_577450MartiniHenry_HP"]
+	  </xpath>
+	  <attribute>MayRequire</attribute>
+	</Operation>
+
+	<!-- Projectiles -->
+
+	<Operation Class="PatchOperationAttributeRemove">
+	  <xpath>Defs/ThingDef[
+	  		defName="Base154mmDreyseNeedleBullet" or
+	  		defName="Base11mmChassepotBullet" or
+	  		defName="Base1217x42mmRFBullet" or
+	  		defName="Base1075x58mmRBerdanBullet" or	  		
+	  		defName="Base577450MartiniHenryBullet"]
+	  </xpath>
+	  <attribute>MayRequire</attribute>
+	</Operation>			
+
+	<Operation Class="PatchOperationAttributeRemove">
+	  <xpath>Defs/ThingDef[
+	  		defName="Bullet_154mmDreyseNeedle_FMJ" or
+	  		defName="Bullet_11mmChassepot_FMJ" or
+	  		defName="Bullet_1217x42mmRF_FMJ" or
+	  		defName="Bullet_1075x58mmRBerdan_FMJ" or
+	  		defName="Bullet_577450MartiniHenry_FMJ" or
+	  		defName="Bullet_577450MartiniHenry_AP" or
+	  		defName="Bullet_577450MartiniHenry_HP"]
+	  </xpath>
+	  <attribute>MayRequire</attribute>
+	</Operation>		
+
+	<!-- Recipes -->
+
+	<Operation Class="PatchOperationAttributeRemove">
+	  <xpath>Defs/RecipeDef[
+	  		defName="MakeAmmo_154mmDreyseNeedle_FMJ" or
+	  		defName="MakeAmmo_11mmChassepot_FMJ" or
+	  		defName="MakeAmmo_1217x42mmRF_FMJ" or
+	  		defName="MakeAmmo_1075x58mmRBerdan_FMJ" or
+	  		defName="MakeAmmo_577450MartiniHenry_FMJ" or
+	  		defName="MakeAmmo_577450MartiniHenry_AP" or
+	  		defName="MakeAmmo_577450MartiniHenry_HP"]
+	  </xpath>
+	  <attribute>MayRequire</attribute>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_154mmDreyseNeedle_FMJ" or
+			defName = "MakeAmmo_11mmChassepot_FMJ" or
+			defName = "MakeAmmo_1217x42mmRF_FMJ" or
+	  		defName="MakeAmmo_1075x58mmRBerdan_FMJ" or
+	  		defName="MakeAmmo_577450MartiniHenry_FMJ" or
+	  		defName="MakeAmmo_577450MartiniHenry_AP" or
+	  		defName="MakeAmmo_577450MartiniHenry_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- .56-56 Spencer (base CE) -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_5656Spencer_FMJ" or
+			defName = "MakeAmmo_5656Spencer_AP" or
+			defName = "MakeAmmo_5656Spencer_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- .44-40 Winchester (base CE) -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_44-40Winchester_FMJ" or
+			defName = "MakeAmmo_44-40Winchester_AP" or
+			defName = "MakeAmmo_44-40Winchester_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- .45-70 Government -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_4570Gov_FMJ" or
+			defName = "MakeAmmo_4570Gov_AP" or
+			defName = "MakeAmmo_4570Gov_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- 8x50mmRLebel -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_8x50mmRLebel_FMJ" or
+			defName = "MakeAmmo_8x50mmRLebel_AP" or
+			defName = "MakeAmmo_8x50mmRLebel_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>		
+
+	<!-- 38sp -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_38Special_FMJ" or
+			defName = "MakeAmmo_38Special_AP" or
+			defName = "MakeAmmo_38Special_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- .30-30Winchester -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_3030Winchester_FMJ" or
+			defName = "MakeAmmo_3030Winchester_AP" or
+			defName = "MakeAmmo_3030Winchester_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- .303 brittish -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_303British_FMJ" or
+			defName = "MakeAmmo_303British_AP" or
+			defName = "MakeAmmo_303British_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- .30-06 Springfield	-->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_3006Springfield_FMJ" or
+			defName = "MakeAmmo_3006Springfield_AP" or
+			defName = "MakeAmmo_3006Springfield_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- .32ACP (baseCE) -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_32ACP_FMJ" or
+			defName = "MakeAmmo_32ACP_AP" or
+			defName = "MakeAmmo_32ACP_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>
+
+	<!-- Hi-Calibers -->
+</Patch>

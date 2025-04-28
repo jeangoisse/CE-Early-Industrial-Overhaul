@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_NagantSwap</defName>
+		<label>7.62x38mmR /.32 ACP</label>
+		<ammoTypes>
+			<Ammo_762x38mmR_FMJ>Bullet_762x38mmR_FMJ</Ammo_762x38mmR_FMJ>
+			<Ammo_762x38mmR_AP>Bullet_762x38mmR_AP</Ammo_762x38mmR_AP>
+			<Ammo_762x38mmR_HP>Bullet_762x38mmR_HP</Ammo_762x38mmR_HP>		
+			<Ammo_32ACP_FMJ>Bullet_32ACP_FMJ</Ammo_32ACP_FMJ>
+			<Ammo_32ACP_AP>Bullet_32ACP_AP</Ammo_32ACP_AP>
+			<Ammo_32ACP_HP>Bullet_32ACP_HP</Ammo_32ACP_HP>
+		</ammoTypes>
+		<similarTo>AmmoSet_Pistol</similarTo>
+	</CombatExtended.AmmoSetDef>
+</Defs>

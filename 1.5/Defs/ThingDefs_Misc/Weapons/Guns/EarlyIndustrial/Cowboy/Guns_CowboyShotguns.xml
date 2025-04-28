@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Armory swed-off -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_SawedOff</defName>
+    <label>sawed-off shotgun</label>
+    <description>A double-barrel shotgun with a cut-off barrel for easier concealment and indoor deployment in urban areas.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Rifles/SawedOff</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.95,0.95)</drawSize>
+    </graphicData>
+    <possessionCount>1</possessionCount>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponClasses>
+      <li>ShortShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>12500</WorkToMake>
+      <Mass>2.35</Mass>
+      <Bulk>5.84</Bulk>
+      <ShotSpread>0.17</ShotSpread>
+      <SwayFactor>0.81</SwayFactor>
+      <SightsEfficiency>1.00</SightsEfficiency>
+      <RangedWeapon_Cooldown>0.40</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+      <WoodLog>5</WoodLog>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>3.58</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_12Gauge_Buck_SB</defaultProjectile>
+        <warmupTime>0.6</warmupTime>
+        <range>14</range>
+        <soundCast>Shot_Shotgun_NoRack</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>2</magazineSize>
+        <AmmoGenPerMagOverride>4</AmmoGenPerMagOverride>
+        <reloadTime>0.85</reloadTime>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <ammoSet>AmmoSet_12Gauge_SB</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>Snapshot</aiAimMode>
+      </li>
+    </comps>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>ShortShots</li>
+      <li>CE_Sidearm</li>
+      <li>CE_AI_AssaultWeapon</li>
+      <li>CE_OneHandedWeapon</li>
+      <li>CE_AI_BROOM</li>
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="CombatExtended.GunDrawExtension">
+        <DrawOffset>-0.05,-0.05</DrawOffset>
+        <DropCasingWhenReload>true</DropCasingWhenReload>
+        <AdvancedCasingVariables>true</AdvancedCasingVariables>
+        <CasingRotationRandomRange>20</CasingRotationRandomRange>
+        <CasingOffset>-0.1,0.05</CasingOffset>
+        <CasingSpeedOverrideRange>1.5~2</CasingSpeedOverrideRange>
+        <CasingAngleOffset>-135</CasingAngleOffset>
+        <CasingLifeTimeMultiplier>2</CasingLifeTimeMultiplier>
+      </li>
+    </modExtensions>
+  </ThingDef>  
+
+  <!-- Cooper 1858 Coach -->
+
+  <ThingDef ParentName="CGF1_MWP_SingleShotgun_T2_Coach">
+    <defName>CGF1_MWP_Cooper_M1858_CoachGun_</defName>
+    <label>Cooper M1858 Coach Gun</label>
+    <description>Caliber: 12 Gauge Black Powder. 1 + 1-round double barrel. Single-Shot.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Rifles/Cooper_M1858_CoachGun</texPath>
+      <drawSize>1.10</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CGF1_MWP_Building_Gunsmith_Old</li>
+      </recipeUsers>
+      <researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <Steel>35</Steel>
+      <WoodLog>15</WoodLog>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.60</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>40</equippedAngleOffset>
+    <weaponTags>
+      <li>CGF1_Shotgun_Old</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>ShortShots</li>
+    </weaponClasses>
+    <tradeTags>
+      <li>CGF1_GunsGalore_ACW</li>
+      <li>CGF1_GunsGalore_ACW_LongGun</li>
+    </tradeTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>CGF1_MWP_Bullet_12Gauge_Slug_Shotgun</defaultProjectile>
+        <warmupTime>0.8</warmupTime>
+        <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>37</ticksBetweenBurstShots>
+        <range>12.9</range>
+        <soundCast>CGF1_MWP_SFX_Shotgun_Heavy1</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+        <def>MF_StandardMuzzleFalsh</def>
+        <drawSize>(0.9,1.2)</drawSize>
+        <offsets>
+          <li>(0.59,0.09)</li>
+        </offsets>
+      </li>
+    </modExtensions>
+    <generateCommonality>0.10</generateCommonality> <!-- Average -->
+  </ThingDef>
+
+  <!-- Cooper 1858 shotgun -->
+
+  <ThingDef ParentName="CGF1_MWP_SingleShotgun_T2">
+    <defName>CGF1_MWP_Cooper_M1858_Shotgun_</defName>
+    <label>Cooper M1858 Shotgun</label>
+    <description>Caliber: 12 Gauge Black Powder. 1 + 1-round double barrel. Single-Shot.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Rifles/Cooper_M1858_Shotgun</texPath>
+      <drawSize>1.10</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CGF1_MWP_Building_Gunsmith_Old</li>
+      </recipeUsers>
+      <researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <Steel>45</Steel>
+      <WoodLog>20</WoodLog>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>3.8</Mass>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedAngleOffset>40</equippedAngleOffset>
+    <weaponTags>
+      <li>CGF1_Shotgun_Old</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>ShortShots</li>
+    </weaponClasses>
+    <tradeTags>
+      <li>CGF1_GunsGalore_ACW</li>
+      <li>CGF1_GunsGalore_ACW_LongGun</li>
+    </tradeTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>CGF1_MWP_Bullet_12Gauge_Slug_Shotgun</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>37</ticksBetweenBurstShots>
+        <range>15.9</range>
+        <soundCast>CGF1_MWP_SFX_Shotgun_Heavy1</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+        <def>MF_StandardMuzzleFalsh</def>
+        <drawSize>(0.9,1.2)</drawSize>
+        <offsets>
+          <li>(0.69,0.09)</li>
+        </offsets>
+      </li>
+    </modExtensions>
+    <generateCommonality>0.10</generateCommonality> <!-- Average -->
+  </ThingDef>
+
+  <!-- Cooper 1858 sawed-off -->
+
+  <ThingDef ParentName="CGF1_MWP_SingleShotgun_T2_SawedOff">
+    <defName>CGF1_MWP_Cooper_M1858_SawedOff_</defName>
+    <label>Cooper M1858 Sawed-Off</label>
+    <description>Caliber: 12 Gauge Black Powder. 1 + 1-round double barrel. Single-Shot.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Rifles/Cooper_M1858_SawedOff</texPath>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CGF1_MWP_Building_Gunsmith_Old</li>
+      </recipeUsers>
+      <researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <Steel>25</Steel>
+      <WoodLog>10</WoodLog>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>3.0</Mass>
+      <AccuracyTouch>0.82</AccuracyTouch>
+      <AccuracyShort>0.77</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>CGF1_Shotgun_Old</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>ShortShots</li>
+    </weaponClasses>
+    <tradeTags>
+      <li>CGF1_GunsGalore_ACW</li>
+      <li>CGF1_GunsGalore_ACW_Pistol</li>
+    </tradeTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>CGF1_MWP_Bullet_12Gauge_Slug_Shotgun</defaultProjectile>
+        <warmupTime>0.7</warmupTime>
+        <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>37</ticksBetweenBurstShots>
+        <range>12.9</range>
+        <soundCast>CGF1_MWP_SFX_Shotgun_Heavy1</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+        <def>MF_StandardMuzzleFalsh</def>
+        <drawSize>(0.9,1.2)</drawSize>
+        <offsets>
+          <li>(0.41,0.11)</li>
+        </offsets>
+      </li>
+    </modExtensions>
+    <generateCommonality>0.10</generateCommonality> <!-- Average -->
+    <thingSetMakerTags Inherit="False"/>
+  </ThingDef>
+    
+
+
+  <!-- Steven double barrel 1877 -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_Double-barrelStevens</defName>
+    <label>Stevens 1877</label>
+    <description>Stevens model 1877. 10 Gauge double barrel shotgun, easy identified by its “3-trigger” configuration.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Rifles/StevensDoubleBarrel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <statBases>
+      <Mass>3.00</Mass>
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+      <ShotSpread>0.14</ShotSpread>
+      <SwayFactor>1.20</SwayFactor>
+      <Bulk>9.0</Bulk>
+      <SightsEfficiency>1</SightsEfficiency>
+      <WorkToMake>9500</WorkToMake>
+    </statBases>
+  <equippedAngleOffset>40</equippedAngleOffset>
+    <costList>
+      <Steel>45</Steel>
+      <WoodLog>15</WoodLog>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+  <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_10Gauge_Buck</defaultProjectile>
+        <warmupTime>0.6</warmupTime>
+        <range>18</range>
+        <soundCast>Shot_DoubleBarrel</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+     </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>2</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.95</reloadTime>
+    <ammoSet>AmmoSet_10Gauge</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>FALSE</aiUseBurstMode>
+        <aiAimMode>Snapshot</aiAimMode>
+      </li>
+    </comps>
+  <modExtensions>
+    <li Class="CombatExtended.GunDrawExtension">
+      <DrawSize>1.25,1.25</DrawSize>
+      <DrawOffset>0.0,0.0</DrawOffset>
+    </li>
+    <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+      <def>MF_StandardMuzzleFalsh</def>
+      <drawSize>(1.0,1.5)</drawSize>
+      <offsets>
+        <li>(1.05,0.08)</li>
+      </offsets>
+    </li>   
+  </modExtensions>  
+    <weaponTags>
+    <li>SimpleGun</li>
+      <li>CE_AI_AssaultWeapon</li>
+    <li>FrontierGunSimple</li>
+    </weaponTags> 
+  <recipeMaker>
+      <researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+    <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+         <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>2</power>
+          <cooldownTime>2.02</cooldownTime>
+            <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>
+
+  <!-- Spencer M1882 Shotgun -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_1882_spencer</defName>
+    <label>Spencer Model 1882</label>
+    <description>One of the first successfull pump action shotguns to be produced. It combines power, rate of fire, and capacity all in one.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Rifles/spencer_model_1882</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>11000</WorkToMake>
+      <SightsEfficiency>1</SightsEfficiency>
+      <ShotSpread>0.10</ShotSpread>
+      <SwayFactor>1.0</SwayFactor>
+      <Bulk>10.00</Bulk>
+      <Mass>4.00</Mass>
+      <RangedWeapon_Cooldown>0.90</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <WoodLog>10</WoodLog>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.45</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_12Gauge_Buck</defaultProjectile>
+        <warmupTime>0.6</warmupTime>
+        <range>20</range>
+        <soundCast>Shot_spencershotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+	  <li>CE_AI_AssaultWeapon</li>
+    </weaponTags>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+		<reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>1.35</reloadTime>
+        <ammoSet>AmmoSet_12Gauge</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>Snapshot</aiAimMode>
+      </li>
+    </comps>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_PumpAction</researchPrerequisite>
+    </recipeMaker>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.02</cooldownTime>
+        <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="CombatExtended.GunDrawExtension">
+        <DrawSize>1.3,1.3</DrawSize>
+        <DrawOffset>0.0,0.0</DrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- Winchester 1887 -->
+
+<ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>CE_Gun_WinchesterModel1887SG</defName>
+    <label>Winchester 1887</label>
+    <description>Winchester Model 1887. 10 Gauge lever action shotgun, a perfect hunter of medium-large sized game.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/WildWest/Rifles/Winchester1887</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <statBases>
+      <Mass>3.60</Mass>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+      <ShotSpread>0.14</ShotSpread>
+      <SwayFactor>1.20</SwayFactor>
+      <Bulk>9.0</Bulk>
+      <SightsEfficiency>1</SightsEfficiency>
+      <WorkToMake>9500</WorkToMake>
+    </statBases>
+  <equippedAngleOffset>40</equippedAngleOffset>
+    <costList>
+      <Steel>50</Steel>
+      <WoodLog>15</WoodLog>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+  <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_10Gauge_Buck</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>18</range>
+        <soundCast>Shot_Model1887</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+     </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>0.85</reloadTime>
+    <ammoSet>AmmoSet_10Gauge</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>FALSE</aiUseBurstMode>
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+  <modExtensions>
+    <li Class="CombatExtended.GunDrawExtension">
+      <DrawSize>1.25,1.25</DrawSize>
+      <DrawOffset>0.0,0.0</DrawOffset>
+    </li>
+    <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+      <def>MF_StandardMuzzleFalsh</def>
+      <drawSize>(1.0,1.5)</drawSize>
+      <offsets>
+        <li>(1.05,0.08)</li>
+      </offsets>
+    </li>   
+  </modExtensions>    
+    <weaponTags>
+    <li>SimpleGun</li>
+      <li>CE_AI_AssaultWeapon</li>
+    <li>FrontierGunAdvanced</li>
+    </weaponTags> 
+   <recipeMaker>
+      <researchPrerequisite>CEFP_LeverAction</researchPrerequisite>
+    <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+         <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>2</power>
+          <cooldownTime>2.02</cooldownTime>
+            <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>
+    
+
+</Defs>

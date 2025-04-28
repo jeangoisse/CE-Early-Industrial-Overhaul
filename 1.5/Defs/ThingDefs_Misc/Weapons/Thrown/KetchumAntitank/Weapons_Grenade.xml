@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== Anti Tank Grenade ========================== -->
+  
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>Proj_CE_Ketchum</defName>
+    <label>Ketchum gernade</label>
+    <graphicData>
+      <texPath>Things/Projectile/Grenades/Ketchum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <explosionRadius>1</explosionRadius>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>40</damageAmountBase>
+      <explosionDelay>0</explosionDelay> <!-- Impact -->
+	  <dropsCasings>false</dropsCasings>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+      <speed>8</speed>
+      <gravityFactor>1.3</gravityFactor> <!-- has tiny wings-->
+      <suppressionFactor>2.0</suppressionFactor>
+			<dangerFactor>1.5</dangerFactor>
+			<airborneSuppressionFactor>0.25</airborneSuppressionFactor>
+    </projectile>
+    <comps>
+      <li Class="CombatExtended.CompProperties_Fragments">
+        <fragments>
+          <Fragment_Medium>10</Fragment_Medium>
+        </fragments>
+      </li>
+    </comps>
+  </ThingDef>  
+
+  <ThingDef ParentName="BaseEquipment">
+    <defName>Weapon_CE_Ketchum</defName>
+    <label>Ketchum grenade</label>
+    <description>Early impact grenade design that uses fins to stabilize itself in flight and a primitive contact fuse to detonate itself. Bulkier and heavier than the typical grenade.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponThrown/Ketchum</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Industrial</techLevel>
+    <generateAllowChance>0.50</generateAllowChance>
+    <stackLimit>25</stackLimit>
+    <statBases>
+      <Mass>1.36</Mass>
+      <Bulk>3.5</Bulk>
+      <MarketValue>20</MarketValue>
+      <SightsEfficiency>0.65</SightsEfficiency>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+	  <li>CE_AI_AOE</li>	
+      <li>CE_AI_Grenade</li>
+      <li>CE_OneHandedWeapon</li>
+      <li>GrenadeDestructive</li>
+    </weaponTags>
+    <thingCategories>
+      <li>Grenades</li>
+    </thingCategories>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <label>throw anti-tank grenade</label>
+        <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>16.0</range> <!--range is bigger than normal grenade-->
+        <warmupTime>1.4</warmupTime> <!-- Longer time to prime -->
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>Proj_CE_Ketchum</defaultProjectile>
+        <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+        <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>FALSE</aiUseBurstMode>
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>Body</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.75</cooldownTime>
+        <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
+      </li>
+    </tools>
+  </ThingDef>
+
+</Defs>

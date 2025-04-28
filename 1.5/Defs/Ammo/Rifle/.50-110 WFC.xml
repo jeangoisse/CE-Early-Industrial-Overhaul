@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>Ammo50-110WCF</defName>
+		<label>.50-110 WCF</label>
+		<parent>AmmoRifles</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberRifle</iconPath>
+	</ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_50-110WCF</defName>
+		<label>.50-110 WCF</label>
+		<ammoTypes>
+			<Ammo_50-110WCF_FMJ>Bullet_50-110WCF_FMJ</Ammo_50-110WCF_FMJ>
+			<Ammo_50-110WCF_AP>Bullet_50-110WCF_AP</Ammo_50-110WCF_AP>
+			<Ammo_50-110WCF_HP>Bullet_50-110WCF_HP</Ammo_50-110WCF_HP>
+			<Ammo_50-110WCF_Incendiary>Bullet_50-110WCF_Incendiary</Ammo_50-110WCF_Incendiary>
+			<Ammo_50-110WCF_HE>Bullet_50-110WCF_HE</Ammo_50-110WCF_HE>
+			<Ammo_50-110WCF_Sabot>Bullet_50-110WCF_Sabot</Ammo_50-110WCF_Sabot>				
+		</ammoTypes>
+		<similarTo>AmmoSet_Rifle</similarTo>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="50-110WCFBase" ParentName="SmallAmmoBase" Abstract="True">
+		<description>Long straight wall cartridge designed for powerful big game hunting rifles.</description>
+		<generateAllowChance>0.75</generateAllowChance>		
+		<statBases>
+			<Mass>0.047</Mass>
+			<Bulk>0.04</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo50-110WCF</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="50-110WCFBase">
+		<defName>Ammo_50-110WCF_FMJ</defName>
+		<label>.50-110 WCF cartridge (FMJ)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.22</MarketValue>
+		</statBases>
+		<ammoClass>FullMetalJacket</ammoClass>
+		<cookOffProjectile>Bullet_50-110WCF_FMJ</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="50-110WCFBase">
+		<defName>Ammo_50-110WCF_AP</defName>
+		<label>.50-110 WCF cartridge (AP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/AP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.25</MarketValue>
+		</statBases>
+		<ammoClass>ArmorPiercing</ammoClass>
+		<cookOffProjectile>Bullet_50-110WCF_AP</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="50-110WCFBase">
+		<defName>Ammo_50-110WCF_HP</defName>
+		<label>.50-110 WCF cartridge (HP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/HP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.25</MarketValue>
+		</statBases>
+		<ammoClass>HollowPoint</ammoClass>
+		<cookOffProjectile>Bullet_50-110WCF_HP</cookOffProjectile>
+	</ThingDef>
+	
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="50-110WCFBase">
+    <defName>Ammo_50-110WCF_Incendiary</defName>
+    <label>.50-110 WCF cartridge (AP-I)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/Incendiary</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.35</MarketValue>
+    </statBases>
+    <ammoClass>IncendiaryAP</ammoClass>
+    <cookOffProjectile>Bullet_50-110WCF_Incendiary</cookOffProjectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="50-110WCFBase">
+    <defName>Ammo_50-110WCF_HE</defName>
+    <label>.50-110 WCF cartridge (AP-HE)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/HE</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.59</MarketValue>
+    </statBases>
+    <ammoClass>ExplosiveAP</ammoClass>
+    <cookOffProjectile>Bullet_50-110WCF_HE</cookOffProjectile>
+  </ThingDef>
+ 
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="50-110WCFBase">
+    <defName>Ammo_50-110WCF_Sabot</defName>
+    <label>.50-110 WCF cartridge (Sabot)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/Sabot</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.35</MarketValue>
+	  <Mass>0.047</Mass>
+    </statBases>
+    <ammoClass>Sabot</ammoClass>
+    <cookOffProjectile>Bullet_50-110WCF_Sabot</cookOffProjectile>
+  </ThingDef>
+  
+	<!-- ================== Projectiles ================== -->
+	
+	<ThingDef Name="Base50-110WCFBullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<speed>144</speed>
+			<dropsCasings>true</dropsCasings>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base50-110WCFBullet">
+		<defName>Bullet_50-110WCF_FMJ</defName>
+		<label>.50-110 WCF (FMJ)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>30</damageAmountBase>
+			<armorPenetrationSharp>11</armorPenetrationSharp>
+			<armorPenetrationBlunt>135.8</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base50-110WCFBullet">
+		<defName>Bullet_50-110WCF_AP</defName>
+		<label>.50-110 WCF (AP)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>19</damageAmountBase>
+			<armorPenetrationSharp>22</armorPenetrationSharp>
+			<armorPenetrationBlunt>135.8</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base50-110WCFBullet">
+		<defName>Bullet_50-110WCF_HP</defName>
+		<label>.50-110 WCF (HP)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>38</damageAmountBase>
+			<armorPenetrationSharp>5.5</armorPenetrationSharp>
+			<armorPenetrationBlunt>135.8</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	  <ThingDef ParentName="Base50-110WCFBullet">
+		<defName>Bullet_50-110WCF_Incendiary</defName>
+		<label>.50-110 WCF (AP-I)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageAmountBase>19</damageAmountBase>
+		  <armorPenetrationSharp>22</armorPenetrationSharp>
+		  <armorPenetrationBlunt>135.8</armorPenetrationBlunt>
+		  <secondaryDamage>
+				<li>
+			  	<def>Flame_Secondary</def>
+			  	<amount>12</amount>
+				</li>
+		  </secondaryDamage>
+		</projectile>
+	  </ThingDef>
+	  
+	  <ThingDef ParentName="Base50-110WCFBullet">
+		<defName>Bullet_50-110WCF_HE</defName>
+		<label>.50-110 WCF (AP-HE)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageAmountBase>30</damageAmountBase>
+		  <armorPenetrationSharp>11</armorPenetrationSharp>
+		  <armorPenetrationBlunt>135.8</armorPenetrationBlunt>
+		  <secondaryDamage>
+				<li>
+			  	<def>Bomb_Secondary</def>
+			  	<amount>18</amount>
+				</li>
+		  </secondaryDamage>
+		</projectile>
+	  </ThingDef>
+
+	  <ThingDef ParentName="Base50-110WCFBullet">
+		<defName>Bullet_50-110WCF_Sabot</defName>
+		<label>.50-110 WCF (Sabot)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageAmountBase>17</damageAmountBase>
+		  <armorPenetrationSharp>38.5</armorPenetrationSharp>
+		  <armorPenetrationBlunt>186.28</armorPenetrationBlunt>
+		  <speed>216</speed>
+		</projectile>
+	  </ThingDef>
+	  
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_50-110WCF_FMJ</defName>
+		<label>make .50-110 WCF (FMJ) cartridge x500</label>
+		<description>Craft 200 .50-110 WCF (FMJ) cartridges.</description>
+		<jobString>Making .50-110 WCF (FMJ) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>22</count>
+			</li>
+		</ingredients>
+		<researchPrerequisite>CEFP_HighCaliber</researchPrerequisite>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_50-110WCF_FMJ>200</Ammo_50-110WCF_FMJ>
+		</products>
+    	<workAmount>2200</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_50-110WCF_AP</defName>
+		<label>make .50-110 WCF (AP) cartridge x200</label>
+		<description>Craft 200 .50-110 WCF (AP) cartridges.</description>
+		<jobString>Making .50-110 WCF (AP) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>22</count>
+			</li>
+		</ingredients>
+		<researchPrerequisite>CEFP_HighCaliber</researchPrerequisite>		
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_50-110WCF_AP>200</Ammo_50-110WCF_AP>
+		</products>
+	<workAmount>2400</workAmount>		
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_50-110WCF_HP</defName>
+		<label>make .50-110 WCF (HP) cartridge x200</label>
+		<description>Craft 200 .50-110 WCF (HP) cartridges.</description>
+		<jobString>Making .50-110 WCF (HP) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>22</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_50-110WCF_HP>200</Ammo_50-110WCF_HP>
+		</products>
+	<workAmount>2400</workAmount>		
+	</RecipeDef>
+
+  <RecipeDef ParentName="AdvancedAmmoRecipeBase">
+    <defName>MakeAmmo_50-110WCF_Incendiary</defName>
+    <label>make .50-110 WCF (AP-I) cartridge x200</label>
+    <description>Craft 200 .50-110 WCF (AP-I) cartridges.</description>
+    <jobString>Making .50-110 WCF (AP-I) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>22</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Prometheum</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>    
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Prometheum</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_50-110WCF_Incendiary>200</Ammo_50-110WCF_Incendiary>
+    </products>
+    <workAmount>3400</workAmount>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="AdvancedAmmoRecipeBase">
+    <defName>MakeAmmo_50-110WCF_HE</defName>
+    <label>make .50-110 WCF (AP-HE) cartridge x200</label>
+    <description>Craft 200 .50-110 WCF (AP-HE) cartridges.</description>
+    <jobString>Making .50-110 WCF (AP-HE) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>22</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FSX</li>
+          </thingDefs>
+        </filter>
+        <count>7</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>FSX</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_50-110WCF_HE>200</Ammo_50-110WCF_HE>
+    </products>
+    <workAmount>5000</workAmount>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="AdvancedAmmoRecipeBase">
+    <defName>MakeAmmo_50-110WCF_Sabot</defName>
+    <label>make .50-110 WCF (Sabot) cartridge x200</label>
+    <description>Craft 200 .50-110 WCF (Sabot) cartridges.</description>
+    <jobString>Making .50-110 WCF (Sabot) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>		  
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Uranium</li>
+        <li>Chemfuel</li>		
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_50-110WCF_Sabot>200</Ammo_50-110WCF_Sabot>
+    </products>
+    <workAmount>3400</workAmount>
+  </RecipeDef>
+	
+</Defs>

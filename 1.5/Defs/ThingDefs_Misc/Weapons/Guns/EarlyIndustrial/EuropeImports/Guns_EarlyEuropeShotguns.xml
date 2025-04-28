@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <!-- ==================== Drilling Shotgun CHECK SOUNDS + Ammo
+
+  underbarrel : 8x57mm(to change ? => temp integration)
+
+   ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_Drillingshotgun</defName>
+    <label>Drilling Shotgun</label>
+    <description>A common industrial sporting rifle in Europe. A neat and versatile weapon when out in the wilderness.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/drilling</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>17500</WorkToMake>
+      <SightsEfficiency>1.0</SightsEfficiency>
+      <ShotSpread>0.15</ShotSpread>
+      <SwayFactor>1.65</SwayFactor>
+      <Bulk>11.86</Bulk>
+      <Mass>3.50</Mass>
+      <RangedWeapon_Cooldown>0.79</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+	  <WoodLog>20</WoodLog>
+    </costList>
+    <recipeMaker>
+	  <researchPrerequisites>
+      <li>CEFP_BreechLoading2</li>
+    </researchPrerequisites>
+    </recipeMaker>    
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.68</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_16Gauge_Buck</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>14</range>
+        <soundCast>Shot_singleshotshotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>2</magazineSize>
+        <reloadTime>1.60</reloadTime>
+		<reloadOneAtATime>true</reloadOneAtATime>
+        <ammoSet>AmmoSet_16Gauge</ammoSet>
+      </li>
+<!--       <li Class="CombatExtended.CompProperties_FireModes" />
+      <li Class="CombatExtended.CompProperties_UnderBarrel">
+          <propsUnderBarrel>
+            <magazineSize>1</magazineSize>
+            <reloadTime>2</reloadTime>
+            <ammoSet>AmmoSet_8x57mm</ammoSet>
+          </propsUnderBarrel>
+          <verbPropsUnderBarrel>
+            <recoilAmount>2.55</recoilAmount>
+            <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Bullet_8x57mm_FMJ</defaultProjectile>
+            <warmupTime>0.6</warmupTime>
+            <range>60</range>
+            <soundCast>Shot_drilling</soundCast>
+            <soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>5</muzzleFlashScale>
+          </verbPropsUnderBarrel>
+          <propsFireModesUnderBarrel>
+            <aiUseBurstMode>FALSE</aiUseBurstMode>
+            <aiAimMode>AimedShot</aiAimMode>
+            <aimedBurstShotCount>1</aimedBurstShotCount>
+          </propsFireModesUnderBarrel>
+      </li>  -->      
+    </comps>
+    <weaponTags>  
+      <li>CE_AI_AssaultWeapon</li>  	  
+    </weaponTags>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+	<modExtensions>
+      <li Class="CombatExtended.GunDrawExtension">
+        <DrawSize>1.3,1.3</DrawSize>
+        <DrawOffset>0.1,0.0</DrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

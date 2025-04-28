@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>Ammo45-120</defName>
+		<label>45-120 Sharps</label>
+		<parent>AmmoRifles</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberRifle</iconPath>
+	</ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_45120</defName>
+		<label>45-120 Sharps</label>
+		<ammoTypes>
+			<Ammo_45-120_FMJ>Bullet_45-120_FMJ</Ammo_45-120_FMJ>
+			<Ammo_45-120_AP>Bullet_45-120_AP</Ammo_45-120_AP>
+			<Ammo_45-120_HP>Bullet_45-120_HP</Ammo_45-120_HP>
+			<Ammo_45-120_Incendiary>Bullet_45-120_Incendiary</Ammo_45-120_Incendiary>
+			<Ammo_45-120_HE>Bullet_45-120_HE</Ammo_45-120_HE>
+			<Ammo_45-120_Sabot>Bullet_45-120_Sabot</Ammo_45-120_Sabot>				
+		</ammoTypes>
+		<similarTo>AmmoSet_Rifle</similarTo>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="45-120Base" ParentName="SmallAmmoBase" Abstract="True">
+		<description>Long straight wall cartridge designed for powerful big game hunting rifles.</description>
+		<generateAllowChance>0.75</generateAllowChance>	
+		<statBases>
+			<Mass>0.047</Mass>
+			<Bulk>0.04</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo45-120</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="45-120Base">
+		<defName>Ammo_45-120_FMJ</defName>
+		<label>45-120 Sharps cartridge (FMJ)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.22</MarketValue>
+		</statBases>
+		<ammoClass>FullMetalJacket</ammoClass>
+		<cookOffProjectile>Bullet_45-120_FMJ</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="45-120Base">
+		<defName>Ammo_45-120_AP</defName>
+		<label>45-120 Sharps cartridge (AP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/AP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.22</MarketValue>
+		</statBases>
+		<ammoClass>ArmorPiercing</ammoClass>
+		<cookOffProjectile>Bullet_45-120_AP</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="45-120Base">
+		<defName>Ammo_45-120_HP</defName>
+		<label>45-120 Sharps cartridge (HP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/HP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.22</MarketValue>
+		</statBases>
+		<ammoClass>HollowPoint</ammoClass>
+		<cookOffProjectile>Bullet_45-120_HP</cookOffProjectile>
+	</ThingDef>
+	
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="45-120Base">
+    <defName>Ammo_45-120_Incendiary</defName>
+    <label>45-120 Sharps cartridge (AP-I)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/Incendiary</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.37</MarketValue>
+    </statBases>
+    <ammoClass>IncendiaryAP</ammoClass>
+    <cookOffProjectile>Bullet_45-120_Incendiary</cookOffProjectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="45-120Base">
+    <defName>Ammo_45-120_HE</defName>
+    <label>45-120 Sharps cartridge (AP-HE)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/HE</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.54</MarketValue>
+    </statBases>
+    <ammoClass>ExplosiveAP</ammoClass>
+    <cookOffProjectile>Bullet_45-120_HE</cookOffProjectile>
+  </ThingDef>
+ 
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="45-120Base">
+    <defName>Ammo_45-120_Sabot</defName>
+    <label>45-120 Sharps cartridge (Sabot)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/Sabot</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.26</MarketValue>
+	  <Mass>0.044</Mass>
+    </statBases>
+    <ammoClass>Sabot</ammoClass>
+    <cookOffProjectile>Bullet_45-120_Sabot</cookOffProjectile>
+  </ThingDef>
+  
+	<!-- ================== Projectiles ================== -->
+	
+	<ThingDef Name="Base45-120Bullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<speed>116</speed>
+			<dropsCasings>true</dropsCasings>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base45-120Bullet">
+		<defName>Bullet_45-120_FMJ</defName>
+		<label>45-120 Sharps (FMJ)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>24</damageAmountBase>
+			<armorPenetrationSharp>11</armorPenetrationSharp>
+			<armorPenetrationBlunt>83.78</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base45-120Bullet">
+		<defName>Bullet_45-120_AP</defName>
+		<label>45-120 Sharps (AP)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationSharp>22</armorPenetrationSharp>
+			<armorPenetrationBlunt>83.78</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base45-120Bullet">
+		<defName>Bullet_45-120_HP</defName>
+		<label>45-120 Sharps (HP)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>31</damageAmountBase>
+			<armorPenetrationSharp>5.5</armorPenetrationSharp>
+			<armorPenetrationBlunt>83.78</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	  <ThingDef ParentName="Base45-120Bullet">
+		<defName>Bullet_45-120_Incendiary</defName>
+		<label>45-120 Sharps (AP-I)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageAmountBase>15</damageAmountBase>
+		  <armorPenetrationSharp>22</armorPenetrationSharp>
+		  <armorPenetrationBlunt>83.78</armorPenetrationBlunt>
+		  <secondaryDamage>
+				<li>
+			  	<def>Flame_Secondary</def>
+			  	<amount>10</amount>
+				</li>
+		  </secondaryDamage>
+		</projectile>
+	  </ThingDef>
+	  
+	  <ThingDef ParentName="Base45-120Bullet">
+		<defName>Bullet_45-120_HE</defName>
+		<label>45-120 Sharps (AP-HE)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageAmountBase>24</damageAmountBase>
+		  <armorPenetrationSharp>9</armorPenetrationSharp>
+		  <armorPenetrationBlunt>83.78</armorPenetrationBlunt>
+		  <secondaryDamage>
+				<li>
+			  	<def>Bomb_Secondary</def>
+			  	<amount>14</amount>
+				</li>
+		  </secondaryDamage>
+		</projectile>
+	  </ThingDef>
+
+	  <ThingDef ParentName="Base45-120Bullet">
+		<defName>Bullet_45-120_Sabot</defName>
+		<label>45-120 Sharps (Sabot)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageAmountBase>14</damageAmountBase>
+		  <armorPenetrationSharp>38.5</armorPenetrationSharp>
+		  <armorPenetrationBlunt>143.66</armorPenetrationBlunt>
+		  <speed>179</speed>
+		</projectile>
+	  </ThingDef>
+	  
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_45-120_FMJ</defName>
+		<label>make 45-120 Sharps (FMJ) cartridge x500</label>
+		<description>Craft 200 45-120 Sharps (FMJ) cartridges.</description>
+		<jobString>Making 45-120 Sharps (FMJ) cartridges.</jobString>
+	<researchPrerequisite>CEFP_HighCaliber</researchPrerequisite>				
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_45-120_FMJ>200</Ammo_45-120_FMJ>
+		</products>
+    	<workAmount>2000</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_45-120_AP</defName>
+		<label>make 45-120 Sharps (AP) cartridge x200</label>
+		<description>Craft 200 45-120 Sharps (AP) cartridges.</description>
+		<jobString>Making 45-120 Sharps (AP) cartridges.</jobString>
+	<researchPrerequisite>CEFP_HighCaliber</researchPrerequisite>				
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_45-120_AP>200</Ammo_45-120_AP>
+		</products>
+	<workAmount>2400</workAmount>		
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_45-120_HP</defName>
+		<label>make 45-120 Sharps (HP) cartridge x200</label>
+		<description>Craft 200 45-120 Sharps (HP) cartridges.</description>
+		<jobString>Making 45-120 Sharps (HP) cartridges.</jobString>
+	<researchPrerequisite>CEFP_HighCaliber</researchPrerequisite>				
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_45-120_HP>200</Ammo_45-120_HP>
+		</products>
+	<workAmount>2000</workAmount>		
+	</RecipeDef>
+
+  <RecipeDef ParentName="AdvancedAmmoRecipeBase">
+    <defName>MakeAmmo_45-120_Incendiary</defName>
+    <label>make 45-120 Sharps (AP-I) cartridge x200</label>
+    <description>Craft 200 45-120 Sharps (AP-I) cartridges.</description>
+    <jobString>Making 45-120 Sharps (AP-I) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Prometheum</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Prometheum</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_45-120_Incendiary>200</Ammo_45-120_Incendiary>
+    </products>
+    <workAmount>4400</workAmount>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="AdvancedAmmoRecipeBase">
+    <defName>MakeAmmo_45-120_HE</defName>
+    <label>make 45-120 Sharps (AP-HE) cartridge x200</label>
+    <description>Craft 200 45-120 Sharps (AP-HE) cartridges.</description>
+    <jobString>Making 45-120 Sharps (AP-HE) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FSX</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>FSX</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_45-120_HE>200</Ammo_45-120_HE>
+    </products>
+    <workAmount>6000</workAmount>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="AdvancedAmmoRecipeBase">
+    <defName>MakeAmmo_45-120_Sabot</defName>
+    <label>make 45-120 Sharps (Sabot) cartridge x200</label>
+    <description>Craft 200 45-120 Sharps (Sabot) cartridges.</description>
+    <jobString>Making 45-120 Sharps (Sabot) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>		  
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Uranium</li>
+        <li>Chemfuel</li>		
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_45-120_Sabot>200</Ammo_45-120_Sabot>
+    </products>
+    <workAmount>3200</workAmount>
+  </RecipeDef>
+	
+</Defs>
