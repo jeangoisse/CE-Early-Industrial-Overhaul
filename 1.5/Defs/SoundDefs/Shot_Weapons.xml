@@ -57,7 +57,7 @@
 				<name>Shot</name>
 				<grains>
 					<li Class="AudioGrain_Clip">
-					<clipPath>Things/singleshotrifles</clipPath>
+					<clipPath>Things/SingleShotRifles</clipPath>
 					</li>
 				</grains>      
 				<volumeRange>80</volumeRange>   

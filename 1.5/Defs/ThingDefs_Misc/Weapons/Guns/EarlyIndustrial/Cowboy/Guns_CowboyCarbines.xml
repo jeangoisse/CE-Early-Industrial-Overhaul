@@ -4,6 +4,8 @@
 	<!--
 	to do :
 
+	=> Unfuck CE patch from GGCW and unfuck sounds !!!
+
 	- Add new guns from db
 	- harmonize ammosets (winchester 1886)
 	- researches
@@ -12,10 +14,12 @@
 
 	Sources
 
-	- CE Blackpowder
+	- CE Blackpowder mods
+	- CE 2Bore
 	- CE Cowboys
 	- GunGalore CivilWar
 	- Wild West Firearms
+	- Huntrimworld Down
 
 Gun Galore : ajouter wood recipe
 Auggie's : nerf work to make
@@ -23,7 +27,7 @@ Auggie's : nerf work to make
 	-->
 
 
-	<!-- ==================== Smith Carbine ==================== -->
+	<!-- ==================== Smith Carbine : QW to add to quest rewards ==================== -->
 
 	<ThingDef ParentName="BaseMakeableGun">
 		<defName>CE_Gun_SmithCarbine</defName>
@@ -154,7 +158,7 @@ Auggie's : nerf work to make
 				<li>CGF1_MWP_Building_Gunsmith_Old</li>
 			</recipeUsers>
 			<researchPrerequisites>
-				<li>Gunsmithing</li>
+				<!-- <li>Gunsmithing</li> -->
 				<li>CEFP_PercussionCap</li>
 			</researchPrerequisites>
 			<skillRequirements>
@@ -163,7 +167,7 @@ Auggie's : nerf work to make
 		</recipeMaker>
 		<costList>
 			<WoodLog>15</WoodLog>
-			<Steel>45</Steel>
+			<Steel>40</Steel>
 			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
 		<statBases>

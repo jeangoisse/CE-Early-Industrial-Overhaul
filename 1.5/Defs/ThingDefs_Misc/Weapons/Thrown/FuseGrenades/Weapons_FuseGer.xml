@@ -7,7 +7,7 @@
     <defName>Proj_CE_FuseGernade</defName>
     <label>Fuse gernade</label>
     <graphicData>
-      <texPath>Things/Projectile/Grenades/oldFrag</texPath>
+      <texPath>Things/Projectiles/Grenades/oldFrag</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
@@ -38,7 +38,7 @@
     <label>Fuse grenade</label>
     <description>Simple Iron bomb. Produces a powerful explosion upon detonation but lacks the many small fragments of modern grenades.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponThrown/FuseBomb</texPath>
+      <texPath>Things/Weapons/Projectile/FuseBomb</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <soundInteract>Interact_Grenade</soundInteract>

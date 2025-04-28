@@ -515,7 +515,7 @@
 			<drawSize>0.90</drawSize>
 		</graphicData>
 		<uiIconScale>1.4</uiIconScale>
-		<recipeMaker>2
+		<recipeMaker>
 			<recipeUsers>
 				<li>CGF1_MWP_Building_Gunsmith_Old</li>
 			</recipeUsers>
@@ -2365,13 +2365,13 @@
 		<recipeUsers>
 			<li>CGF1_MWP_Building_Gunsmith_Old</li>
 		</recipeUsers>
-		<researchPrerequisite>Gunsmithing</researchPrerequisite>>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
 		<skillRequirements>
 			<Crafting>5</Crafting>
 		</skillRequirements>
 	</recipeMaker>	
     <statBases>
-      <WorkToMake>4000</WorkToMake>
+      <WorkToMake>12500</WorkToMake>
       <SightsEfficiency>0.7</SightsEfficiency>
       <ShotSpread>0.16</ShotSpread>
       <SwayFactor>1.38</SwayFactor>
@@ -2468,7 +2468,7 @@
 
   <!-- Nagant Revolvers -->
 
-	<ThingDef ParentName="BaseHumanMakeableGun_CE">
+	<ThingDef ParentName="BaseHumanMakeableGun">
 		<defName>CE_Gun_NagantM1895a</defName>
 		<label>Nagant Revolver</label>
 		<description>Nagant M1895. Ancient double-action revolver. The gun uses a 7-round cylinder that loads one by one via an ejection rod. The old revolver also takes advantage of a gas-sealed cartridge/cylinder, giving higher velocity than others in its class. Owning one used to be a sign of power.</description>

@@ -194,9 +194,9 @@
 		<description>Unlocks simple sharpshooter gear like lenses, optics and target sights.</description>
 			<baseCost>400</baseCost>
 		<techLevel>Industrial</techLevel>
-		<prerequisites>
+<!-- 		<prerequisites>
 			<li>Gunsmithing</li>
-		</prerequisites>
+		</prerequisites> -->
 		<tab>CEFPTab</tab>
 			<researchViewX>6</researchViewX>
 			<researchViewY>1.4</researchViewY>
