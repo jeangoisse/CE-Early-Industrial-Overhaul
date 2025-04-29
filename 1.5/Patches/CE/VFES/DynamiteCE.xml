@@ -16,7 +16,7 @@
 				<xpath>Defs/ThingDef[defName="VFES_Proj_Dynamite"]/graphicData</xpath>
 				<value>
 					<graphicData>
-						<texPath>Things/Projectile/DynamiteThrown/DynamiteThrownA</texPath>
+						<texPath>Things/Projectiles/DynamiteThrown/DynamiteThrownA</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 					</graphicData>
 				</value>

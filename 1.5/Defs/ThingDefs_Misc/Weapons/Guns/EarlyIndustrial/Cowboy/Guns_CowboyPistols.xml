@@ -2499,7 +2499,7 @@
 				<defaultProjectile>Bullet_762x38mmR_FMJ</defaultProjectile>
 				<warmupTime>0.6</warmupTime>
 				<range>16</range>
-				<soundCast>Shot_HeavySMG</soundCast>
+				<soundCast>Shot_singleaction</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>

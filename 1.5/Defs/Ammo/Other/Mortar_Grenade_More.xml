@@ -8,7 +8,7 @@
 	<ThingDef Name="BaseMortarGrenadeBullet" ParentName="BaseExplosiveBullet" Abstract="true">
 		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
 		<graphicData>
-			<texPath>Things/Projectile/Grenades/oldFrag180</texPath>
+			<texPath>Things/Projectiles/Grenades/oldFrag180</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(0.45,0.45)</drawSize>
 		</graphicData>

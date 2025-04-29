@@ -163,29 +163,6 @@
 	</SoundDef>
 	
 	<SoundDef>
-		<defName>Shot_doublebarrel</defName>
-		<context>MapOnly</context>
-		<eventNames />  
-		<maxSimultaneous>1</maxSimultaneous>  
-		<subSounds>
-			<li>
-				<name>Shot</name>
-				<grains>
-					<li Class="AudioGrain_Clip">
-					<clipPath>Things/doublebarrel</clipPath>
-					</li>
-				</grains>      
-				<volumeRange>80</volumeRange>   
-				<pitchRange>
-					<min>0.9</min>        
-					<max>1.0</max>
-				</pitchRange>      
-				<sustainLoop>False</sustainLoop>
-			</li>
-		</subSounds>
-	</SoundDef>
-	
-	<SoundDef>
 		<defName>Shot_browning</defName>
 		<context>MapOnly</context>
 		<eventNames />  
