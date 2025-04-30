@@ -14,7 +14,7 @@
 				defName = "CGF1_MWP_Sharps_M1863_Carbine_" or
 				defName = "CGF1_MWP_Sharps_M1863_Rifle_" or
 				defName = "CGF1_MWP_Springfield_M1863_" or
-				defName = "CGF1_MWP_Whitney_Enfield_M1853_ or
+				defName = "CGF1_MWP_Whitney_Enfield_M1853_" or
 				defName = "CGF1_MWP_Remington_M1863_Zouave_" 								
 				]/tools
 		</xpath>
@@ -58,9 +58,9 @@
 		<xpath>Defs/ThingDef[
 				defName = "CGF1_MWP_Richmond_M1863_Bayonet_" or
 				defName = "CGF1_MWP_Sharps_M1859_Rifle_Bayonet_" or
-				defName = "CGF1_MWP_Springfield_M1863_Bayonet_"
-				defName = "CGF1_MWP_Whitney_Enfield_M1853_Bayonet or
-				defName = "CGF1_MWP_Remington_M1863_Zouave_Bayonet
+				defName = "CGF1_MWP_Springfield_M1863_Bayonet_" or
+				defName = "CGF1_MWP_Whitney_Enfield_M1853_Bayonet" or
+				defName = "CGF1_MWP_Remington_M1863_Zouave_Bayonet"
 				]/tools
 		</xpath>
 		<value>
