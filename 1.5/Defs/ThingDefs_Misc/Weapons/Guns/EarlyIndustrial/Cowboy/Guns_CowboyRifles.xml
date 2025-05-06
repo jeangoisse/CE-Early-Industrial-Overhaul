@@ -495,6 +495,190 @@
 		</thingSetMakerTags>			
 	</ThingDef>
 
+	<!-- Whitney-Enfield 1853 + bayo -->
+
+	<ThingDef ParentName="CGF1_MWP_Musket_T1">
+		<defName>CGF1_MWP_Whitney_Enfield_M1853_</defName>
+		<label>Whitney Enfield M1853</label>
+		<description>Caliber: .58 Caliber Ball. 1-round chamber. Single-Shot.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Rifles/Whitney_EnfieldM1853</texPath>
+			<drawSize>1.10</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<WoodLog>15</WoodLog>
+			<Steel>45</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>4.4</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.70</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Old</li>
+			<li>CGF1_Rifle_Musket</li>
+		</weaponTags>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_LongGun</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_58CaliberBall</defaultProjectile>
+				<warmupTime>1.55</warmupTime>
+				<range>30.9</range>
+				<soundCast>CGF1_MWP_SFX_Musket1</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.7,0.7)</drawSize>
+				<offsets>
+					<li>(0.67,0.07)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Attach bayonet</label>
+						<description>Bayonet is not currently attached. Click to install.</description>
+						<texPath>CGF1/UI/Fix_Bayonet</texPath>
+						<weapon>CGF1_MWP_Whitney_Enfield_M1853_Bayonet_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>200</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+	</ThingDef>
+	
+	<ThingDef ParentName="CGF1_MWP_Musket_T1">
+		<defName>CGF1_MWP_Whitney_Enfield_M1853_Bayonet_</defName>
+		<label>Whitney Enfield M1853 (Bayonet)</label>
+		<description>Caliber: .58 Caliber Ball. 1-round chamber. Single-Shot.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Rifles/UP/Whitney_EnfieldM1853_Bayonet</texPath>
+			<drawSize>1.45</drawSize>
+		</graphicData>
+		<recipeMaker Inherit="False"/>
+		<costList>
+			<WoodLog>15</WoodLog>
+			<Steel>50</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>4.65</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.70</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags Inherit="Falses"/>
+		<tradeTags Inherit="False">
+			<li>CGF1_GunsGalore_NoSpawn</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_58CaliberBall</defaultProjectile>
+				<warmupTime>1.55</warmupTime>
+				<range>30.9</range>
+				<soundCast>CGF1_MWP_SFX_Musket1</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>bayonet</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.7,0.7)</drawSize>
+				<offsets>
+					<li>(0.57,0.10)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Remove bayonet</label>
+						<description>Bayonet is attached. Click to uninstall.</description>
+						<texPath>CGF1/UI/Remove_Bayonet</texPath>
+						<weapon>CGF1_MWP_Whitney_Enfield_M1853_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>180</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<generateCommonality>0.0125</generateCommonality> <!-- Rare -->
+		<thingSetMakerTags Inherit="False"/>
+	</ThingDef>
+
 	<!-- ==================== Springfield 1861 ==================== -->
 	<!--  without bayonet -->
 	
@@ -1076,6 +1260,171 @@
 		<generateCommonality>0.0125</generateCommonality> <!-- Rare -->
 		<thingSetMakerTags Inherit="False"/>
 	</ThingDef>
+
+	<!-- Remington Zouave 1863 + bayo -->
+
+	<ThingDef ParentName="CGF1_MWP_Musket_T1">
+		<defName>CGF1_MWP_Remington_M1863_Zouave_</defName>
+		<label>Remington M1863 Zouave</label>
+		<description>Caliber: .58 Caliber Ball. 1-round chamber. Single-Shot.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Rifles/Remington_M1863_Zouave</texPath>
+			<drawSize>1.10</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith_Old</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<WoodLog>20</WoodLog>
+			<Steel>35</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>3.8</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.70</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Rifle_Old</li>
+		</weaponTags>
+		<tradeTags>
+			<li>CGF1_GunsGalore_ACW</li>
+			<li>CGF1_GunsGalore_ACW_LongGun</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_58Minieball_FMJ</defaultProjectile>
+				<warmupTime>1.55</warmupTime>
+				<range>30.9</range>
+				<soundCast>CGF1_MWP_SFX_Musket2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Attach bayonet</label>
+						<description>Bayonet is not currently attached. Click to install.</description>
+						<texPath>CGF1/UI/Fix_Bayonet</texPath>
+						<weapon>CGF1_MWP_Remington_M1863_Zouave_Bayonet_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>200</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+	</ThingDef>
+	
+	<ThingDef ParentName="CGF1_MWP_Musket_T1">
+		<defName>CGF1_MWP_Remington_M1863_Zouave_Bayonet_</defName>
+		<label>Remington M1863 Zouave (Bayonet)</label>
+		<description>Caliber: .58 Caliber Ball. 1-round chamber. Single-Shot.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Rifles/UP/Remington_M1863_Zouave_Bayonet</texPath>
+			<drawSize>1.45</drawSize>
+		</graphicData>
+		<recipeMaker Inherit="False"/>
+		<costList>
+			<WoodLog>20</WoodLog>
+			<Steel>40</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>4.05</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.70</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<weaponTags Inherit="False"/>
+		<tradeTags Inherit="False">
+			<li>CGF1_GunsGalore_NoSpawn</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_58Minieball_FMJ</defaultProjectile>
+				<warmupTime>1.55</warmupTime>
+				<range>30.9</range>
+				<soundCast>CGF1_MWP_SFX_Musket2</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>bayonet</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="WeaponSwitch.CompProperties_SwitchWeapon">
+				<weaponsToSwitch>
+					<li>
+						<label>Remove bayonet</label>
+						<description>Bayonet is attached. Click to uninstall.</description>
+						<texPath>CGF1/UI/Remove_Bayonet</texPath>
+						<weapon>CGF1_MWP_Remington_M1863_Zouave_</weapon>
+						<retainAmmoOnTransfer>true</retainAmmoOnTransfer>
+						<ticksToSwitchWeapon>180</ticksToSwitchWeapon>
+					</li>
+				</weaponsToSwitch>
+			</li>
+		</comps>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+		<thingSetMakerTags Inherit="False"/>
+	</ThingDef>	
 
 	<!-- Richmond Rifle 1863 + Bayonet -->
 

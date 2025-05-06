@@ -8,7 +8,15 @@
 							defName = "CGF1_MWP_Berdan_Model1870_" or
 							defName = "CGF1_MWP_Chassepot_1866_" or
 							defName = "CGF1_MWP_Dreyse_NeedleGun_M1860_Fusilier_" or
-							defName = "CGF1_MWP_Remington_RollingBlock_M1867_"]/tools
+							defName = "CGF1_MWP_Remington_RollingBlock_M1867_" or
+							defName = "CGF1_MWP_Berdan_Model1870_Dragoon_" or
+							defName = "CGF1_MWP_Berdan_Model1870_Cossack_" or
+							defName = "CGF1_MWP_MauserM1871_" or
+							defName = "CGF1_MWP_MauserM1871_Cavalry_" or
+							defName = "CGF1_MWP_MauserM1871_Jagerbuchse_" or
+							defName = "CGF1_MWP_MauserM1871_84_" or
+							defName = "CGF1_MWP_Remington_RollingBlock_M1867_84_" or
+							defName = "CGF1_MWP_Remington_RollingBlock_M1867_96_"]/tools
 					</xpath>
 					<value>
 						<tools>
@@ -49,7 +57,10 @@
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[
 							defName = "CGF1_MWP_Berdan_Model1870_Bayonet_" or
-							defName = "CGF1_MWP_Chassepot_1866_Bayonet_"]/tools
+							defName = "CGF1_MWP_Chassepot_1866_Bayonet_" or
+							defName = "CGF1_MWP_MauserM1871_Bayonet_" or
+							defName = "CGF1_MWP_MauserM1871_84_Bayonet"							
+							]/tools
 					</xpath>
 					<value>
 						<tools>
@@ -154,6 +165,261 @@
                         <aiAimMode>AimedShot</aiAimMode>
 					</FireModes>
 				</li>
+
+				<!-- Berdan dragoon & cossack -->
+
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_Berdan_Model1870_Cossack_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>11.65</Bulk>
+						<Mass>4.05</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_1075x58mmRBerdan_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_1075x58mmRBerdan</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_Berdan_Model1870_Dragoon_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>12.00</Bulk>
+						<Mass>4.10</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_1075x58mmRBerdan_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_1075x58mmRBerdan</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+
+				<!-- Mauser 1871 -->
+
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_MauserM1871_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>12.99</Bulk>
+						<Mass>4.5</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_11x60mmRMauser_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_11x60mmRMauser</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_MauserM1871_Bayonet_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.44</SwayFactor>
+                        <Bulk>14.19</Bulk>
+						<Mass>4.6</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_11x60mmRMauser_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_11x60mmRMauser</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_MauserM1871_84_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>13.15</Bulk>
+						<Mass>4.6</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_11x60mmRMauser_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>8</magazineSize>
+						<reloadTime>0.9</reloadTime>
+						<ammoSet>AmmoSet_11x60mmRMauser</ammoSet>
+						<reloadOneAtATime>true</reloadOneAtATime>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_MauserM1871_84_Bayonet_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.44</SwayFactor>
+                        <Bulk>14.35</Bulk>
+						<Mass>4.7</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_11x60mmRMauser_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>8</magazineSize>
+						<reloadTime>0.9</reloadTime>
+						<ammoSet>AmmoSet_11x60mmRMauser</ammoSet>
+						<reloadOneAtATime>true</reloadOneAtATime>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_MauserM1871_Cavalry_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>11.55</Bulk>
+						<Mass>3.55</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_11x60mmRMauser_FMJ</defaultProjectile>
+                           <warmupTime>1.0</warmupTime>
+                           <range>45</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_11x60mmRMauser</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_MauserM1871_Jagerbuchse_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>12.11</Bulk>
+						<Mass>4.1</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_11x60mmRMauser_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Rifle_Bolt2</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+						   <recoilAmount>2.12</recoilAmount>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_11x60mmRMauser</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>								
 
 				<!-- Chassepot + Bayo -->
 
@@ -283,6 +549,69 @@
                         <aiAimMode>AimedShot</aiAimMode>
 					</FireModes>
 				</li>
+
+				<!-- Rolling Block europe conversions -->
+
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_Remington_RollingBlock_M1867_84_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>12.50</Bulk>
+						<Mass>4.2</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_1015x61mmR_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Musket1</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_1015x61mmR</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>CGF1_MWP_Remington_RollingBlock_M1867_96_</defName>
+					<statBases>
+                        <SightsEfficiency>1.00</SightsEfficiency>
+                        <ShotSpread>0.06</ShotSpread>
+                        <SwayFactor>1.39</SwayFactor>
+                        <Bulk>12.50</Bulk>
+						<Mass>4.2</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+					</statBases>
+					<Properties>
+                           <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                           <hasStandardCommand>true</hasStandardCommand>
+                           <defaultProjectile>Bullet_8x58mmRDanishKrag_FMJ</defaultProjectile>
+                           <warmupTime>1.1</warmupTime>
+                           <range>55</range>
+                           <soundCast>CGF1_MWP_SFX_Musket1</soundCast>
+                           <soundCastTail>GunTail_Medium</soundCastTail>
+                           <muzzleFlashScale>9</muzzleFlashScale>
+                     </Properties>
+					 <AmmoUser>
+						<magazineSize>1</magazineSize>
+						<AmmoGenPerMagOverride>7</AmmoGenPerMagOverride>
+						<reloadTime>4.6</reloadTime>
+						<ammoSet>AmmoSet_8x58mmRDanishKrag</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+				</li>				
 
 			</operations>
 		</Operation>

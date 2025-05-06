@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<!-- Borchardt -->
+
+	<ThingDef ParentName="CGF1_MWP_Pistol_T2">
+		<defName>CGF1_MWP_Borchardt_C93_</defName>
+		<label>Borchardt C93</label>
+		<description>Caliber: 7.65x25mm Borchardt. 8-round detachable mag. Semi-Automatic.
+		
+The Borchardt C93 is a semi-automatic handgun designed by Hugo Borchardt in the early 1890s, using a unique toggle-lock design. About 3,000 Borchardt pistols were produced, making it the first successful semi-auto pistol ever put in production - however, it had no significant non-commercial sales, and any military use of the C93 was limited to experiments or by officers with privately procured sidearms. Nevertheless, the pistol was extremely influential on the development of future handguns; while working at Deutsche Waffen und Munitionsfabriken (DWM), Georg Luger was tasked with selling C93 pistols abroad. Receiving an extensive list of complaints, Luger was tasked to redesign the pistol, with the final design evolving into the iconic Luger pistol. Furthermore, the C93's 7.65mm cartridge was used as the basis for the 7.63x25mm cartridge developed for Mauser's C96 pistol.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Pistols/Borchardt_C93</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_SelfLoad</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>35</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>1.3</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.70</AccuracyShort>
+			<AccuracyMedium>0.40</AccuracyMedium>
+			<AccuracyLong>0.30</AccuracyLong>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Pistol_Civilian</li>
+			<li>CGF1_Pistol_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_IA1</li>
+			<li>CGF1_GunsGalore_IA1_Pistol</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_765x25mmBorchardt_Pistol</defaultProjectile>
+				<warmupTime>0.35</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Pistol4</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.0,1.0)</drawSize>
+				<offsets>
+					<li>(0.32,0.14)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+		<thingSetMakerTags>
+			<li>CGF1_GunsGalore_RewardAncient_Common</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<!-- C96 -->
+
+	<ThingDef ParentName="CGF1_MWP_Pistol_T2">
+		<defName>CGF1_MWP_Mauser_C96_</defName>
+		<label>Mauser C96</label>
+		<description>Caliber: 7.63x25mm Mauser. 10-round internal mag. Semi-Automatic.
+		
+The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Josef Feederle in the 1890s. Produced initially by Mauser (and given its name by Paul Mauser himself) and later copied by many other entities, the C96 is iconic for being among the first widespread commercial semi-automatic handguns. Despite being acquired or tested in some form by almost every developed country at one point or another, the C96 pistol was never formally adopted by any military force; nevertheless, the C96 saw widespread use in military conflicts for over a half-century, and was also reasonably successful in private sales.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Pistols/Mauser_C96</texPath>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+		<uiIconScale>1.4</uiIconScale>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_SelfLoad</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>35</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>1.3</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.70</AccuracyShort>
+			<AccuracyMedium>0.40</AccuracyMedium>
+			<AccuracyLong>0.30</AccuracyLong>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>CGF1_Pistol_Civilian</li>
+			<li>CGF1_Pistol_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_IA1</li>
+			<li>CGF1_GunsGalore_IA1_Pistol</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_763x25mmMauser_Pistol</defaultProjectile>
+				<warmupTime>0.35</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Pistol3</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.0,1.0)</drawSize>
+				<offsets>
+					<li>(0.30,0.14)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.5</generateCommonality> <!-- Abundant -->
+		<thingSetMakerTags>
+			<li>CGF1_GunsGalore_RewardAncient_Common</li>
+		</thingSetMakerTags>
+	</ThingDef>	
+
+	<!-- Stock -->
+
+	<ThingDef ParentName="CGF1_MWP_PistolCarbine_SemiAuto_T2">
+		<defName>CGF1_MWP_Mauser_C96_Stock_</defName>
+		<label>Mauser C96 Stock</label>
+		<description>Caliber: 7.63x25mm Mauser. 10-round internal mag. Semi-Automatic.
+		
+The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Josef Feederle in the 1890s. Produced initially by Mauser (and given its name by Paul Mauser himself) and later copied by many other entities, the C96 is iconic for being among the first widespread commercial semi-automatic handguns. Despite being acquired or tested in some form by almost every developed country at one point or another, the C96 pistol was never formally adopted by any military force; nevertheless, the C96 saw widespread use in military conflicts for over a half-century, and was also reasonably successful in private sales.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Pistols/Mauser_C96_Stock</texPath>
+			<drawSize>1.05</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_SelfLoad</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>35</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<WoodLog>10</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>10000</WorkToMake>
+			<Mass>2.5</Mass>
+			<AccuracyTouch>0.85</AccuracyTouch>
+			<AccuracyShort>0.65</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.30</AccuracyLong>
+			<RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>35</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Pistol_Civilian</li>
+			<li>CGF1_Pistol_Old</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_IA1</li>
+			<li>CGF1_GunsGalore_IA1_Pistol</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_763x25mmMauser_Pistol</defaultProjectile>
+				<warmupTime>0.9</warmupTime>
+				<range>25.9</range>
+				<soundCast>CGF1_MWP_SFX_Pistol3</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.0,1.0)</drawSize>
+				<offsets>
+					<li>(0.46,0.15)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
+	</ThingDef>	
+
+	<!-- Stock scope -->
+
+	<ThingDef ParentName="CGF1_MWP_PistolCarbine_SemiAuto_T2">
+		<defName>CGF1_MWP_Mauser_C96_Stock_Scope_</defName>
+		<label>Mauser C96 Stock (Scope)</label>
+		<description>Caliber: 7.63x25mm Mauser. 10-round internal mag. Semi-Automatic.
+		
+The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Josef Feederle in the 1890s. Produced initially by Mauser (and given its name by Paul Mauser himself) and later copied by many other entities, the C96 is iconic for being among the first widespread commercial semi-automatic handguns. Despite being acquired or tested in some form by almost every developed country at one point or another, the C96 pistol was never formally adopted by any military force; nevertheless, the C96 saw widespread use in military conflicts for over a half-century, and was also reasonably successful in private sales.</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/EuropeImports/Pistols/Mauser_C96_Stock_Scope</texPath>
+			<drawSize>1.05</drawSize>
+		</graphicData>
+		<recipeMaker>
+			<recipeUsers>
+				<li>CGF1_MWP_Building_Gunsmith</li>
+			</recipeUsers>
+			<researchPrerequisites>
+				<li>CEFP_SelfLoad</li>
+				<li>CEFP_SimpleOptics</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Steel>40</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<WoodLog>10</WoodLog>
+		</costList>
+		<statBases>
+			<WorkToMake>15000</WorkToMake>
+			<Mass>2.7</Mass>
+			<AccuracyTouch>0.85</AccuracyTouch>
+			<AccuracyShort>0.65</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.30</AccuracyLong>
+			<RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>35</equippedAngleOffset>
+		<weaponTags>
+			<li>CGF1_Pistol_Civilian</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>CGF1_GunsGalore_IA1</li>
+			<li>CGF1_GunsGalore_IA1_Pistol</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>CGF1_MWP_Bullet_763x25mmMauser_Pistol</defaultProjectile>
+				<warmupTime>1.4</warmupTime>
+				<range>30.9</range>
+				<soundCast>CGF1_MWP_SFX_Pistol3</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="issaczhuang.muzzleflash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1.0,1.0)</drawSize>
+				<offsets>
+					<li>(0.46,0.15)</li>
+				</offsets>
+			</li>
+		</modExtensions>
+		<generateCommonality>0.0125</generateCommonality> <!-- Rare -->
+	</ThingDef>	
+
+</Defs>

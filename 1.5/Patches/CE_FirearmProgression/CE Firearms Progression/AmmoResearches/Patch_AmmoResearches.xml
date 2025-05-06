@@ -148,5 +148,18 @@
 		</value>
 	</Operation>
 
+	<!-- 7.63 Mauser -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			defName = "MakeAmmo_763x25mmMauser_FMJ" or
+			defName = "MakeAmmo_763x25mmMauser_AP" or
+			defName = "MakeAmmo_763x25mmMauser_HP"]
+		</xpath>
+		<value>
+			<researchPrerequisite>CEFP_MetallicCartridge</researchPrerequisite>
+		</value>
+	</Operation>	
+
 	<!-- Hi-Calibers -->
 </Patch>
