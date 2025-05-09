@@ -1,5 +1,7 @@
 # CE - Early Industrial Overhaul (beta)
 
+Database for the mod can be found [HERE][https://link.com](https://github.com/jeangoisse/CE-EarlyIndustrial-database)
+
 CE Early-Industrial Overhaul is an **unofficial fork** of various mods covering firearms history black-powder to the early-industrial eras. It aims to make this gameplay fully enjoyable; viable and plentiful.
 - Guns and ammos from **late XVIIIth Century until World War I era**
 - Overhauling the early-industrial gameplay loop
@@ -15,6 +17,11 @@ CE Early-Industrial Overhaul is an **unofficial fork** of various mods covering 
 - Harmonized ammos (CE ammos from add-ons have priority)
 - New ingame descriptions for flavour (wip)
 It contains **hundreds of ranged weapons**, ranging from flintlocks, cap and ball revolvers, and rifles of all kind specifically reworked to play together.
+- Balance guns stats, worktomake, market values, recipes costs (**heavy wip**)
+- Improved sounds (wip)
+- Harmonized ammos (CE ammos from add-ons have priority on other 3rd party mods)
+- New ingame descriptions for flavour (wip)
+It contains **a shitload of ranged weapons**, ranging from flintlocks, smoothbores, cap and ball revolvers and rifles of all kind specifically reworked to play together.
 
 ###### **ALPHA State**
 <u>The mod is still in testing, expect constant changes and errors !</u>
@@ -80,3 +87,16 @@ It is needed for some sounds and for the nice workbench texture.
 - **Fabricator Overseer** (aka the drippy-guy, for support and ideas).
 - **Again All the artists and devs** who originally participated to the original mods.
 - **The whole CE-Community** (because they're the best).
+- **The whole CE-Community** (because they're the best)
+
+This is an **unofficial** fork, <u>all rights come to the original authors, the fork has been made with their consent.</u>
+
+This fork has nothing to do with official Combat Extended Team, so if you encounter issue don't go bother them, **bother me instead.** 
+Same thing for the original mods I forked, **please don't annoy** the mod authors with errors coming from my fork.
+
+**This mod will never be posted on the workshop, don't repost it there.**
+
+###### Contact
+
+@cyreneen on Discord . Feel free to dm me for anything.
+This mod has a dedicated thread in the workshop channel of the CE Server, come say hello!
