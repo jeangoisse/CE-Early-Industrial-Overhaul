@@ -50,6 +50,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>2.7</researchViewX>
+			<researchViewX>2</researchViewX>
 			<researchViewY>0.7</researchViewY>
 	</ResearchProjectDef>
 
