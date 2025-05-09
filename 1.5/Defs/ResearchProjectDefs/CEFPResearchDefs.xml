@@ -18,7 +18,7 @@
 
 	<ResearchTabDef>
 		<defName>CEFPTab</defName>
-		<label>CE Firearms Progression</label>
+		<label>CE Early-Industrial Firearms Progression</label>
 	</ResearchTabDef>
 
 	<!-- Muzzleloading -->
@@ -43,13 +43,13 @@
 		<defName>CEFP_BreechLoading</defName>
 		<label>Breech-Loading</label>
 		<description>Unlocks early breech-loading guns.</description>
-			<baseCost>250</baseCost>
+			<baseCost>500</baseCost>
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
 			<li>CEFP_MuzzleLoading</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>0.7</researchViewX>
+			<researchViewX>2.7</researchViewX>
 			<researchViewY>0.7</researchViewY>
 	</ResearchProjectDef>
 
@@ -67,7 +67,7 @@
 			<li>Gunsmithing</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>0.7</researchViewX>
+			<researchViewX>1</researchViewX>
 			<researchViewY>1.4</researchViewY>
 	</ResearchProjectDef>	
 	
@@ -85,8 +85,8 @@
 			<!-- <li>CEFP_EarlyMachining</li> -->
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>0</researchViewX>
-			<researchViewY>3</researchViewY>
+			<researchViewX>4</researchViewX>
+			<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	
 	<!-- Percussion Cap -->
@@ -111,15 +111,15 @@
 		<defName>CEFP_BreechLoading2</defName>
 		<label>Breech-Loading II</label>
 		<description>Unlocks more advanced breech-loading mechanisms, including side-block, break action and trapdoor.</description>
-			<baseCost>400</baseCost>
+			<baseCost>750</baseCost>
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
 			<li>CEFP_PercussionCap</li>				
 			<li>CEFP_BreechLoading</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>4</researchViewX>
-			<researchViewY>0.7</researchViewY>
+			<researchViewX>3</researchViewX>
+			<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Lever-action -->
@@ -134,7 +134,7 @@
 			<li>CEFP_PercussionCap</li>			
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>4</researchViewX>
+			<researchViewX>3</researchViewX>
 			<researchViewY>1.4</researchViewY>
 	</ResearchProjectDef>
 
@@ -150,7 +150,7 @@
 			<li>CEFP_PercussionCap</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>4</researchViewX>
+			<researchViewX>3</researchViewX>
 			<researchViewY>2.8</researchViewY>
 	</ResearchProjectDef>	
 
@@ -160,30 +160,30 @@
 		<defName>CEFP_BoltAction</defName>
 		<label>Bolt-Action</label>
 		<description>Unlocks bolt-action mechanism.</description>
-			<baseCost>400</baseCost>
+			<baseCost>750</baseCost>
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
 			<li>CEFP_BreechLoading2</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>4</researchViewX>
+			<researchViewX>3</researchViewX>
 			<researchViewY>4.2</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Selfload -->
 
 	<ResearchProjectDef>
-		<defName>CEFP_Selfload</defName>
+		<defName>CEFP_SelfLoad</defName>
 		<label>Self-load</label>
 		<description>Unlocks selfload mechanism for guns, open the way to semi-automatic technology.</description>
-			<baseCost>400</baseCost>
+			<baseCost>1000</baseCost>
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
 			<li>CEFP_BoltAction</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>4</researchViewX>
-			<researchViewY>6</researchViewY>
+			<researchViewX>3</researchViewX>
+			<researchViewY>5.6</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Simple optics -->
@@ -192,14 +192,14 @@
 		<defName>CEFP_SimpleOptics</defName>
 		<label>simple optics</label>
 		<description>Unlocks simple sharpshooter gear like lenses, optics and target sights.</description>
-			<baseCost>400</baseCost>
+			<baseCost>500</baseCost>
 		<techLevel>Industrial</techLevel>
 <!-- 		<prerequisites>
 			<li>Gunsmithing</li>
 		</prerequisites> -->
 		<tab>CEFPTab</tab>
-			<researchViewX>6</researchViewX>
-			<researchViewY>1.4</researchViewY>
+			<researchViewX>5</researchViewX>
+			<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- High calibers -->
@@ -208,14 +208,14 @@
 		<defName>CEFP_HighCaliber</defName>
 		<label>high calibers</label>
 		<description>Unlocks early hi-power guns using powerfull cartridges for taking down big preys.</description>
-			<baseCost>400</baseCost>
+			<baseCost>500</baseCost>
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
 			<li>CE_Gunpowder</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>7</researchViewX>
-			<researchViewY>0.7</researchViewY>
+			<researchViewX>4</researchViewX>
+			<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Industrial ammos, abandonned bc its bullshit -->
