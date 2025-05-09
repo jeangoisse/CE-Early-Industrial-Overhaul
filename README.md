@@ -50,7 +50,10 @@ _________
 -   Early Components to craft weapons
 -   Ammo recipes materials expansion
 
+#### Recommended Mods
 
+- CE Important Ammos by ViralReaction
+- Expanded Materials Metals  by Argon or other complex processing chains mods.
 
 ### FAQ
 ###### *Why no workshop release ?*
@@ -79,12 +82,12 @@ It is needed for some sounds and for the nice workbench texture.
 - **Aussie** (for Gun Research Overhaul mod and letting me use it as a base even if i'm French).
 - **Jicker** (for the mad Gun-Galore mods, and letting me use them).
 - **Augdogg** (for Wild-West Firearms mods, and letting me use them).
-- **Serina** (for art, support, ideas, and partnership).
+- **Serina** (for art, support, ideas, and partnership in RW modding crime)
 - **Keshash** (for support and ideas)
 - **Fabricator Overseer** (aka the drippy-guy, for support and ideas).
 - **Again All the artists and devs** who originally participated to the original mods.
 - **The whole CE-Community** (because they're the best).
-- **The whole CE-Community** (because they're the best)
+
 
 This is an **unofficial** fork, <u>all rights come to the original authors, the fork has been made with their consent.</u>
 
