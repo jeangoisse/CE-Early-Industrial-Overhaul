@@ -1,6 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<!-- Hand-Cannon (CE BP -Bonus) -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_HandCannon</defName>
+		<label>Handgonne</label>
+		<description>Handgonne. Primitive black powder weapon, outclassed by practically anything. Has a swinging rod with a lit rope that ignites the powder within the gun.
+		\n"This Is My Boomstick!"</description>
+		<generateAllowChance>1.00</generateAllowChance>	
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Flintlocks/tm_HandGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>14500</WorkToMake>
+			<SightsEfficiency>0.80</SightsEfficiency>
+			<ShotSpread>0.48</ShotSpread>
+			<SwayFactor>1.44</SwayFactor>
+			<Bulk>14.00</Bulk>
+			<Mass>2.58</Mass>
+			<RangedWeapon_Cooldown>0.33</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>15</WoodLog>
+			<Steel>40</Steel>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>3.75</recoilAmount>				
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_SlowMusketBall</defaultProjectile>
+				<warmupTime>1.1</warmupTime>
+				<range>22</range>
+				<soundCast>Shot_1842Musket</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>1</magazineSize>				
+				<reloadTime>7.0</reloadTime>
+				<AmmoGenPerMagOverride>2</AmmoGenPerMagOverride>
+				<ammoSet>AmmoSet_SlowMusketBall</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>Snapshot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_MuzzleLoading</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>2</Crafting>
+		  </skillRequirements>			
+		</recipeMaker>   
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>2.02</cooldownTime>
+          <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+	  <modExtensions>
+		<li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>1.33,1.33</DrawSize>
+			<DrawOffset>-0.04,-0.02</DrawOffset>
+		</li>	
+		<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+			<def>MF_StandardMuzzleFalshTwo</def>
+			<drawSize>(1.5,1.0)</drawSize>
+			<offsets>
+				<li>(0.70,-0.03)</li>
+			</offsets>	
+		</li>			
+	  </modExtensions>
+		<weaponTags>
+		 <li>CE_AI_Rifle</li>	
+		 <li>NeolithicRangedDecent</li>
+	     <li>MedievalRangedAdvanced</li>
+		</weaponTags>
+	</ThingDef>		
+
+
 	<!-- Wall-Gun (armory) -->
 
 	<ThingDef ParentName="BaseMakeableGun">
@@ -66,7 +182,7 @@
 				<li>FueledSmithy</li>
 				<li>ElectricSmithy</li>
 			</recipeUsers>
-			<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+			<researchPrerequisite>CEFP_MuzzleLoading</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>3</Crafting>
 			</skillRequirements>
