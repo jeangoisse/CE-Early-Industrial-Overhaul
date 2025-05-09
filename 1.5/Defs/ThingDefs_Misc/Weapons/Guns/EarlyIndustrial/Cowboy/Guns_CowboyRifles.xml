@@ -24,6 +24,242 @@
 
 	-->
 
+	<!-- ==================== Chambers rifle ==================== -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_AuggieEllisJenningsRifle</defName>
+		<label>Ellis-Jennings Rifle</label>
+		<description>Ellis-Jennings. Repeating flintlock rifle, Uses superimposed loads that can be individually selected by moving the hammer mechanism. This model uses Chambers patented bullets, allowing for a rapid burst shot.
+		\n"To be prepared for war is one of the most effectual means of preserving peace."\n-Washington</description>
+		<generateAllowChance>0.70</generateAllowChance>		
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Flintlocks/EllisJenningsRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>18000</WorkToMake>
+			<SightsEfficiency>1.00</SightsEfficiency>
+			<ShotSpread>0.01</ShotSpread>
+			<SwayFactor>1.56</SwayFactor>
+			<Bulk>5.5</Bulk>
+			<Mass>10.13</Mass>
+			<RangedWeapon_Cooldown>1.44</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>15</WoodLog>
+			<Steel>60</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>			
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.81</recoilAmount>					
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_ChambersShot_FMJ</defaultProjectile>
+				<warmupTime>1.4</warmupTime>
+				<range>35</range>
+				<ticksBetweenBurstShots>15</ticksBetweenBurstShots>	
+				<burstShotCount>4</burstShotCount>				
+				<soundCast>Shot_CE_Musket</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>4</magazineSize>		
+				<AmmoGenPerMagOverride>2</AmmoGenPerMagOverride>				
+				<reloadTime>10</reloadTime>
+				<ammoSet>AmmoSet_ChambersShot</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_MuzzleLoading</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>6</Crafting>
+		  </skillRequirements>				
+		</recipeMaker> 
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>2.02</cooldownTime>
+          <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+		<weaponTags>
+		 <li>NeolithicRangedHeavy</li>		 
+		 <li>NeolithicRangedChief</li>		
+		</weaponTags>					
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.40,1.40</DrawSize>
+				<DrawOffset>0.12,0.04</DrawOffset>
+			</li>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1,1)</drawSize>
+				<offsets>
+					<li>(0.82,0.04)</li>
+				</offsets>	
+			</li>			
+		</modExtensions>
+	</ThingDef>
+
+
+	<!-- ==================== Brown bess ==================== -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_BrownBessAugB</defName>
+		<label>East India Brown Bess</label>
+		<description>East India Brown Bess conversion. Heavy caliber flintlock musket converted to use percussion caps, packs a hard-hitting punch despite its old age. A remnant of broken empires.
+		\nThough her sight was not long and her weight was not small,\nYet her actions were winning, her language was clear;\nAnd everyone bowed as she opened the ball\nOn the arm of some high-gaitered, grim grenadier.\nHalf Europe admitted the striking success\nOf the dances and routs that were given by Brown Bess.</description>
+		<generateAllowChance>0.75</generateAllowChance>		
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Flintlocks/we_are</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<equippedAngleOffset>40</equippedAngleOffset>		
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<SightsEfficiency>1.00</SightsEfficiency>
+			<ShotSpread>0.33</ShotSpread>
+			<SwayFactor>1.86</SwayFactor>
+			<Bulk>13.84</Bulk>
+			<Mass>4.76</Mass>
+			<RangedWeapon_Cooldown>0.80</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>15</WoodLog>
+			<Steel>65</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>			
+		</costList>		
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>2.46</recoilAmount>					
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_FastMusketBall</defaultProjectile>
+				<warmupTime>1.1</warmupTime>
+				<range>35</range>
+				<soundCast>Shot_SniperRifle</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>1</magazineSize>		
+				<AmmoGenPerMagOverride>2</AmmoGenPerMagOverride>
+				<reloadOneAtATime>true</reloadOneAtATime>				
+				<reloadTime>9.5</reloadTime>
+				<ammoSet>AmmoSet_FastMusketBallFull</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_MuzzleLoading</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>5</Crafting>
+		  </skillRequirements>	
+		</recipeMaker> 
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>2.02</cooldownTime>
+          <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+		<weaponTags>
+		 <li>CE_AI_Rifle</li>		
+		 <li>SimpleGun</li>	
+		 <li>NeolithicRangedChief</li>
+		 <li>NeolithicRangedHeavy</li>	
+		 <li>Auggie_BP_LongArm</li> 
+		</weaponTags>						
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>1.30,1.30</DrawSize>
+				<DrawOffset>0.12,0.10</DrawOffset>
+			</li>	
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1,1)</drawSize>
+				<offsets>
+					<li>(1.0,0.048)</li>
+				</offsets>	
+			</li>			
+		</modExtensions>
+	</ThingDef>	
 
 	<!-- ==================== Plains ==================== -->
 	
@@ -41,7 +277,7 @@
 			<li>LongShots</li>
 		</weaponClasses>			
 		<statBases>
-			<WorkToMake>25000</WorkToMake>
+			<WorkToMake>22000</WorkToMake>
 			<SightsEfficiency>2.00</SightsEfficiency>
 			<ShotSpread>0.01</ShotSpread>
 			<SwayFactor>1.58</SwayFactor>
@@ -268,7 +504,7 @@
 		</graphicData>
 		<soundInteract>Interact_Revolver</soundInteract>
 		<statBases>
-			<WorkToMake>28750</WorkToMake>
+			<WorkToMake>24000</WorkToMake>
 			<SightsEfficiency>1.00</SightsEfficiency>
 			<ShotSpread>0.01</ShotSpread>
 			<SwayFactor>1.59</SwayFactor>
@@ -678,6 +914,126 @@
 		<generateCommonality>0.0125</generateCommonality> <!-- Rare -->
 		<thingSetMakerTags Inherit="False"/>
 	</ThingDef>
+
+	<!-- Kammerlader rifle 1855 -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_Kammerlader</defName>
+		<label>Kammerlader</label>
+		<description>Kammerlader M/1855. Nordic beach-loading rifle that uses a unique under hammer system, allowing for a clean sightline and good accuracy at range.
+		\n"Hands off Norway, King!"</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Flintlocks/Kammerlader</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>18000</WorkToMake>
+			<SightsEfficiency>1.00</SightsEfficiency>
+			<ShotSpread>0.07</ShotSpread>
+			<SwayFactor>1.27</SwayFactor>
+			<Bulk>7.50</Bulk>
+			<Mass>5.20</Mass>
+			<RangedWeapon_Cooldown>0.55</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>40</equippedAngleOffset>
+		<costList>
+			<WoodLog>10</WoodLog>
+			<Steel>55</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.95</recoilAmount>				
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_Slow65ball_FMJ</defaultProjectile>
+				<warmupTime>1.1</warmupTime>
+				<range>52</range>
+				<soundCast>Shot_SniperRifle</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>1</magazineSize>	
+				<AmmoGenPerMagOverride>3</AmmoGenPerMagOverride>			
+				<reloadTime>4.8</reloadTime>
+				<ammoSet>AmmoSet_65ballRifle</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+			<researchPrerequisite>CEFP_MuzzleLoading</researchPrerequisite>		
+		  <skillRequirements>
+			<Crafting>6</Crafting>
+		  </skillRequirements>			
+		</recipeMaker>   
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>2.02</cooldownTime>
+          <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+	  <modExtensions>
+		<li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>1.30,1.30</DrawSize>
+			<DrawOffset>0.12,0.10</DrawOffset>
+		</li>
+		<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+			<def>MF_StandardMuzzleFalsh</def>
+			<drawSize>(1.0,1.0)</drawSize>
+			<offsets>
+				<li>(1.0,0.08)</li>
+			</offsets>
+		</li>			
+	  </modExtensions>
+		<weaponTags>
+	     <li>CE_AI_Rifle</li>
+		 <li>SimpleGun</li>
+		 <li>FrontierGunSimple</li>
+		 <li>NeolithicRangedChief</li>
+		 <li>Auggie_BP_LongArm</li>			 
+		</weaponTags>
+		<thingSetMakerTags>
+		  <li>RewardStandardQualitySuper</li>
+		</thingSetMakerTags>			
+	</ThingDef>	
 
 	<!-- ==================== Springfield 1861 ==================== -->
 	<!--  without bayonet -->
