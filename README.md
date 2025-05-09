@@ -19,6 +19,10 @@ CE Early-Industrial Overhaul is an **unofficial fork** of various mods covering 
 - Balance guns stats, worktomake, market values, recipes costs (**heavy wip**)
 
 It contains **a shitload of ranged weapons**, ranging from flintlocks, smoothbores, cap and ball revolvers and rifles of all kind specifically reworked to play together.
+New Researches :
+
+![2025-05-09 15_27_01-Gun Research Overhaul - Notes Divers - Obsidian v1 8 10](https://github.com/user-attachments/assets/cc14ac0a-82f3-42b5-8881-03652cca4a9f)
+
 
 ###### **ALPHA State**
 <u>The mod is still in testing, expect constant changes and errors !</u>
