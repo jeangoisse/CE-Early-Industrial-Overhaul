@@ -16,7 +16,6 @@ CE Early-Industrial Overhaul is an **unofficial fork** of various mods covering 
 - Improved sounds (wip)
 - Harmonized ammos (CE ammos from add-ons have priority)
 - New ingame descriptions for flavour (wip)
-It contains **hundreds of ranged weapons**, ranging from flintlocks, cap and ball revolvers, and rifles of all kind specifically reworked to play together.
 - Balance guns stats, worktomake, market values, recipes costs (**heavy wip**)
 - Improved sounds (wip)
 - Harmonized ammos (CE ammos from add-ons have priority on other 3rd party mods)
