@@ -52,7 +52,7 @@ _________
 ###### *Why no workshop release ?*
 
 Well, for licensing reasons first. 
-This mod includes copy-righted works from various authors. I contacted them and they are okay if the mod stays on **github only**.
+This gunpack includes copy-righted works from various authors. I contacted them and they are okay if the mod stays on **github only**.
 
 Although, despite playing Rimworld for over 5 years now, I don't even own it on Steam yet so all my mods are github only.
 ###### *Why make a fork and not patching ?*
@@ -69,3 +69,14 @@ It is needed for some sounds and for the nice workbench texture.
 **For now, you can't really use this mod with other weapon mods.** 
 
 **I strongly advise you to not trying to run the gunpack with any other mod adding guns, because their researches, ammosets and recipes will need patches in order to function !!**
+
+### Special Thanks 
+- **Auggie, Krip, Sam, Serina and anyone who worked on the CE submods** (for CE-Black Powder, CE Antique Firearms, CZAR Arsenal, CE 2-bore, and CE CowboyTM mods, which vastly made early-tech eras a thing in CE, and thank you so much for let me mess with them).
+- **Aussie** (for Gun Research Overhaul mod and letting me use it as a base even if i'm French).
+- **Jicker** (for the mad Gun-Galore mods, and letting me use them).
+- **Augdogg** (for Wild-West Firearms mods, and letting me use them).
+- **Serina** (for art, support, ideas, and partnership).
+- **Keshash** (for support and ideas)
+- **Fabricator Overseer** (aka the drippy-guy, for support and ideas).
+- **Again All the artists and devs** who originally participated to the original mods.
+- **The whole CE-Community** (because they're the best).
