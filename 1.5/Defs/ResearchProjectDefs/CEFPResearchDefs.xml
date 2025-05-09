@@ -34,7 +34,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>0</researchViewX>
-			<researchViewY>0.7</researchViewY>
+			<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	<!-- Breechloading -->
@@ -49,9 +49,8 @@
 			<li>CEFP_MuzzleLoading</li>
 		</prerequisites>
 		<tab>CEFPTab</tab>
-			<researchViewX>2.7</researchViewX>
 			<researchViewX>2</researchViewX>
-			<researchViewY>0.7</researchViewY>
+			<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Single-Action = Gunsmithing replace Patch -->	
@@ -103,7 +102,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>3</researchViewX>
-			<researchViewY>0.7</researchViewY>
+			<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Breech Loading II -->
@@ -120,7 +119,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>3</researchViewX>
-			<researchViewY>2</researchViewY>
+			<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Lever-action -->
@@ -136,7 +135,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>3</researchViewX>
-			<researchViewY>1.4</researchViewY>
+			<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Pump-action -->
@@ -152,7 +151,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>3</researchViewX>
-			<researchViewY>2.8</researchViewY>
+			<researchViewY>4</researchViewY>
 	</ResearchProjectDef>	
 
 	<!-- Bolt-Action -->
@@ -168,7 +167,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>3</researchViewX>
-			<researchViewY>4.2</researchViewY>
+			<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Selfload -->
@@ -184,7 +183,7 @@
 		</prerequisites>
 		<tab>CEFPTab</tab>
 			<researchViewX>3</researchViewX>
-			<researchViewY>5.6</researchViewY>
+			<researchViewY>6</researchViewY>
 	</ResearchProjectDef>
 
 	<!-- Simple optics -->
