@@ -19,6 +19,10 @@ CE Early-Industrial Overhaul is an **unofficial fork** of various mods covering 
 - Balance guns stats, worktomake, market values, recipes costs (**heavy wip**)
 
 It contains **a shitload of ranged weapons**, ranging from flintlocks, smoothbores, cap and ball revolvers and rifles of all kind specifically reworked to play together.
+New Researches :
+
+![2025-05-09 15_27_01-Gun Research Overhaul - Notes Divers - Obsidian v1 8 10](https://github.com/user-attachments/assets/cc14ac0a-82f3-42b5-8881-03652cca4a9f)
+
 
 ###### **ALPHA State**
 <u>The mod is still in testing, expect constant changes and errors !</u>
@@ -50,7 +54,10 @@ _________
 -   Early Components to craft weapons
 -   Ammo recipes materials expansion
 
+#### Recommended Mods
 
+- CE Important Ammos by ViralReaction
+- Expanded Materials Metals  by Argon or other complex processing chains mods.
 
 ### FAQ
 ###### *Why no workshop release ?*
@@ -79,12 +86,12 @@ It is needed for some sounds and for the nice workbench texture.
 - **Aussie** (for Gun Research Overhaul mod and letting me use it as a base even if i'm French).
 - **Jicker** (for the mad Gun-Galore mods, and letting me use them).
 - **Augdogg** (for Wild-West Firearms mods, and letting me use them).
-- **Serina** (for art, support, ideas, and partnership).
+- **Serina** (for art, support, ideas, and partnership in RW modding crime)
 - **Keshash** (for support and ideas)
 - **Fabricator Overseer** (aka the drippy-guy, for support and ideas).
 - **Again All the artists and devs** who originally participated to the original mods.
 - **The whole CE-Community** (because they're the best).
-- **The whole CE-Community** (because they're the best)
+
 
 This is an **unofficial** fork, <u>all rights come to the original authors, the fork has been made with their consent.</u>
 
