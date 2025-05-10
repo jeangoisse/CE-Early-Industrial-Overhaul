@@ -2,7 +2,7 @@
 
 Database for the mod can be found [HERE]([https://github.com/jeangoisse/CE-EarlyIndustrial-database/] 
 
-CE Early-Industrial Overhaul is an **unofficial fork** of various mods covering firearms history black-powder to the early-industrial eras. It aims to make this gameplay fully enjoyable; viable and plentiful.
+CE Early-Industrial Overhaul is an **unofficial fork** of various mods covering firearms history from black-powder to the early-industrial eras. It aims to make this gameplay fully enjoyable; viable and plentiful.
 - Guns and ammos from **late XVIIIth Century until World War I era**
 - Overhauling the early-industrial gameplay loop
 - Traversing through eras with the **expanded researches** for firearms and ammunitions
