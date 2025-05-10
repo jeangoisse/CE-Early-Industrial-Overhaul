@@ -1582,107 +1582,409 @@
     </modExtensions>
   </ThingDef>
 
-  <!-- Krags-Jorgensen 1892 US CHECK SOUND + AMMO 
-
-			 Make bayo using gg system
-
-			 add sniper version
-
-	-->
+  <!-- Swedish Mauser + Bayo (Serina) -->
 
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>HuntRim_Gun_krag</defName>
-    <label>Springfield M1892 Krag</label>
-    <description>The Springfield M1892 Krag is a bolt-action rifle that holds five rounds in its internal magazine, and one in its chamber. Its magazine lid allows the wielder to top it up from the side, without opening the bolt, and ejecting the chambered round.</description>
-    <possessionCount>1</possessionCount>
+    <defName>scv_SwedishMauser</defName>
+    <label>Swedish Mauser</label>
     <graphicData>
-      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/krag</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/scv_SwedishMauser</texPath>
+			<drawSize>1.25</drawSize>
     </graphicData>
+    <description>.</description>
+    <equippedAngleOffset>45</equippedAngleOffset>
     <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
     <statBases>
-      <WorkToMake>14500</WorkToMake>
-      <SightsEfficiency>1</SightsEfficiency>
-      <ShotSpread>0.02</ShotSpread>
-      <SwayFactor>1.68</SwayFactor>
-      <Bulk>12.40</Bulk>
-      <Mass>3.05</Mass>
-      <RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+      <WorkToMake>16000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>65</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <Steel>60</Steel>
       <WoodLog>20</WoodLog>
+      <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>	    	
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
     <verbs>
-      <li Class="CombatExtended.VerbPropertiesCE">
-        <recoilAmount>2.01</recoilAmount>
-        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_40Krag_FMJ</defaultProjectile>
-        <warmupTime>0.95</warmupTime>
-        <range>54</range>
+        <defaultProjectile>Bullet_BoltActionRifle</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
         <soundCast>Shot_BoltActionRifle</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <weaponTags>
-		<li>CE_AI_AR</li>
-    </weaponTags>
-    <comps>
-      <li Class="CombatExtended.CompProperties_AmmoUser">
-        <magazineSize>5</magazineSize>
-		<reloadOneAtATime>true</reloadOneAtATime>
-        <reloadTime>1.00</reloadTime>
-        <ammoSet>AmmoSet_40Krag</ammoSet>
-      </li>
-      <li Class="CombatExtended.CompProperties_FireModes">
-        <aiAimMode>AimedShot</aiAimMode>
-      </li>
-    </comps>
-    <recipeMaker>
-      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
-    </recipeMaker>
     <tools>
-      <li Class="CombatExtended.ToolCE">
+      <li>
         <label>stock</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>8</power>
-        <cooldownTime>1.55</cooldownTime>
-        <chanceFactor>1.5</chanceFactor>
-        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
-        <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
       </li>
-      <li Class="CombatExtended.ToolCE">
+      <li>
         <label>barrel</label>
         <capacities>
           <li>Blunt</li>
-        </capacities>
-        <power>5</power>
-        <cooldownTime>2.02</cooldownTime>
-        <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
-        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
-      </li>
-      <li Class="CombatExtended.ToolCE">
-        <label>muzzle</label>
-        <capacities>
           <li>Poke</li>
         </capacities>
-        <power>8</power>
-        <cooldownTime>1.55</cooldownTime>
-        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
-        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="CombatExtended.GunDrawExtension">
-        <DrawSize>1.5,1.5</DrawSize>
-        <DrawOffset>0.1,0.0</DrawOffset>
+  </ThingDef>  
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>scv_SwedishMauserBayonet</defName>
+    <label>Swedish Mauser (bayonet)</label>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/UP/scv_SwedishMauserBayonet</texPath>
+			<drawSize>1.25</drawSize>
+    </graphicData>
+    <description>.</description>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>70</Steel>
+      <WoodLog>20</WoodLog>      
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>	    	
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BoltActionRifle</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
       </li>
-    </modExtensions>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>bayonet</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>19</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- Danish Krag Jorgensens 1894 + Bayo -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>scv_KragJorgensen</defName>
+    <label>Danish Krag-Jorgensen 1894</label>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/scv_KragJorgensen</texPath>
+			<drawSize>1.25</drawSize>
+    </graphicData>
+    <description>.</description>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>12500</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <WoodLog>20</WoodLog>      
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>	    	
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BoltActionRifle</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>scv_KragJorgensenBayonet</defName>
+    <label>Danish Krag-Jorgensen 1984 (bayonet)</label>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/UP/scv_KragJorgensenBayonet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+    </graphicData>
+    <description>.</description>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>14000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>70</Steel>
+      <WoodLog>20</WoodLog>      
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>	    	
+      <skillRequirements>      	
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BoltActionRifle</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>bayonet</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>19</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- Norvege Jarmann 1884 + bayo -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>scv_JarmannM1884rifle</defName>
+    <label>Jarmann M1884</label>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/scv_JarmannM1884</texPath>
+			<drawSize>1.25</drawSize>
+    </graphicData>
+    <description>.</description>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <WoodLog>20</WoodLog>      
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>	    	
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BoltActionRifle</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>scv_JarmannM1884rifleBayonet</defName>
+    <label>Jarmann M1884 (bayonet)</label>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/UP/scv_JarmannM1884Bayonet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+    </graphicData>
+    <description>.</description>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>70</Steel>
+      <WoodLog>20</WoodLog>      
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>	
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BoltActionRifle</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>bayonet</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>19</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
   </ThingDef>
 
   <!-- M1917 Enfield (armory) -->

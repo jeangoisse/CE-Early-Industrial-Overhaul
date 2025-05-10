@@ -147,7 +147,7 @@ The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Jos
 				<defaultProjectile>CGF1_MWP_Bullet_763x25mmMauser_Pistol</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
 				<range>25.9</range>
-				<soundCast>CGF1_MWP_SFX_Pistol3</soundCast>
+				<soundCast>Shot_MauserC96</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -240,7 +240,7 @@ The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Jos
 				<defaultProjectile>CGF1_MWP_Bullet_763x25mmMauser_Pistol</defaultProjectile>
 				<warmupTime>0.9</warmupTime>
 				<range>25.9</range>
-				<soundCast>CGF1_MWP_SFX_Pistol3</soundCast>
+				<soundCast>Shot_MauserC96</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -332,7 +332,7 @@ The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Jos
 				<defaultProjectile>CGF1_MWP_Bullet_763x25mmMauser_Pistol</defaultProjectile>
 				<warmupTime>1.4</warmupTime>
 				<range>30.9</range>
-				<soundCast>CGF1_MWP_SFX_Pistol3</soundCast>
+				<soundCast>Shot_MauserC96</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>

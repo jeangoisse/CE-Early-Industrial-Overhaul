@@ -2474,7 +2474,7 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<WoodLog>15</WoodLog>
+			<WoodLog>10</WoodLog>
 			<Steel>60</Steel>
 			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
@@ -2595,7 +2595,7 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<WoodLog>15</WoodLog>
+			<WoodLog>10</WoodLog>
 			<Steel>80</Steel>
 			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
@@ -2668,6 +2668,105 @@
 			</li>
 		</modExtensions>
 	</ThingDef>  
+
+	<!-- 1892 US Krag -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>HuntRim_Gun_krag</defName>
+    <label>Springfield M1892 Krag</label>
+    <description>The Springfield M1892 Krag is a bolt-action rifle that holds five rounds in its internal magazine, and one in its chamber. Its magazine lid allows the wielder to top it up from the side, without opening the bolt, and ejecting the chambered round.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Weapons/Guns/EuropeImports/Rifles/krag</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>16000</WorkToMake>
+      <SightsEfficiency>1</SightsEfficiency>
+      <ShotSpread>0.02</ShotSpread>
+      <SwayFactor>1.68</SwayFactor>
+      <Bulk>12.40</Bulk>
+      <Mass>3.05</Mass>
+      <RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <WoodLog>10</WoodLog>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>2.01</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_40Krag_FMJ</defaultProjectile>
+        <warmupTime>0.95</warmupTime>
+        <range>54</range>
+        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+		<li>CE_AI_AR</li>
+    </weaponTags>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>5</magazineSize>
+		<reloadOneAtATime>true</reloadOneAtATime>
+        <reloadTime>1.00</reloadTime>
+        <ammoSet>AmmoSet_40Krag</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+    <recipeMaker>
+      <researchPrerequisite>CEFP_BoltAction</researchPrerequisite>
+    </recipeMaker>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <chanceFactor>1.5</chanceFactor>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.02</cooldownTime>
+        <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="CombatExtended.GunDrawExtension">
+        <DrawSize>1.5,1.5</DrawSize>
+        <DrawOffset>0.1,0.0</DrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+	<!-- M1903 Springfield scope -->
 
 	<ThingDef ParentName="BaseHumanMakeableGun">
 		<defName>CE_Gun_M1903Springfield</defName>
