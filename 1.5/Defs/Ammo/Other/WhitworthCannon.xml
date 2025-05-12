@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>WhitworthShell</defName>
+		<label>Whitworth shell</label>
+		<parent>AmmoShells</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberCannon</iconPath>
+	</ThingCategoryDef>
+
+  <!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_WhitworthShell</defName>
+		<label>12-pounder Whitworth shot</label>
+		<ammoTypes>
+			<Ammo_WhitworthShell_Round>Bullet_WhitworthShell_Round</Ammo_WhitworthShell_Round>
+			<Ammo_WhitworthShell_Bursting>Bullet_WhitworthShell_Bursting</Ammo_WhitworthShell_Bursting>							
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="WhitworthShellBase" ParentName="HeavyAmmoBase" Abstract="True">
+		<thingCategories>
+			<li>WhitworthShell</li>
+		</thingCategories>
+		<stackLimit>25</stackLimit>
+		<graphicData>
+		<drawSize>1.50</drawSize>
+		</graphicData>  		
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_FueledSmithy</li>
+			<li>CE_AutoEnableCrafting_ElectricSmithy</li>
+		</tradeTags>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Mass>6.6</Mass>
+			<Bulk>3.99</Bulk>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="WhitworthShellBase">
+		<defName>Ammo_WhitworthShell_Round</defName>
+		<label>Whitworth solid shot</label>
+		<description>A solid shell of metal, capable of delivering significant damage on a direct hit.</description>
+		<graphicData>
+			<texPath>Things/Ammo/Cannon/BlackPowder/Cannon_Round</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>26.18</MarketValue>
+		</statBases>
+		<ammoClass>Hexagonal</ammoClass>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="WhitworthShellBase">
+		<defName>Ammo_WhitworthShell_Bursting</defName>
+		<label>Whitworth bursting shell</label>
+		<description>Hollow and filled with explosives, exploding on impact and producing razor-sharp metal splinters.</description>
+		<graphicData>
+			<texPath>Things/Ammo/Cannon/BlackPowder/Cannon_Bursting</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>47.45</MarketValue>
+		</statBases>
+		<ammoClass>BurstingShell</ammoClass>
+		<cookOffProjectile>Bullet_WhitworthShell_Bursting</cookOffProjectile>
+	</ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="BaseWhitworthShell" ParentName="BaseExplosiveBullet" Abstract="true">
+	<graphicData>
+		<texPath>Things/Projectile/Bullet_Big</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>2,2</drawSize>
+	</graphicData>	
+	<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		<speed>92</speed>
+		<soundExplode>MortarBomb_Explode</soundExplode>
+		<flyOverhead>false</flyOverhead>
+		<dropsCasings>false</dropsCasings>
+	</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWhitworthShell">
+		<defName>Bullet_WhitworthShell_Round</defName>
+		<label>solid shot</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>248</damageAmountBase>
+			<armorPenetrationSharp>25</armorPenetrationSharp>
+			<armorPenetrationBlunt>11705</armorPenetrationBlunt>
+			<suppressionFactor>1.0</suppressionFactor>
+			<dangerFactor>1.0</dangerFactor>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWhitworthShell">
+		<defName>Bullet_WhitworthShell_Bursting</defName>
+		<label>bursting shell</label>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>128</speed>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>128</damageAmountBase>
+			<armorPenetrationSharp>0</armorPenetrationSharp>
+			<armorPenetrationBlunt>0</armorPenetrationBlunt>
+			<explosionRadius>2.5</explosionRadius>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+		</projectile>
+		<comps>
+		<li Class="CombatExtended.CompProperties_Fragments">
+			<fragments>
+				<Fragment_Large>18</Fragment_Large>
+				<Fragment_Small>18</Fragment_Small>
+			</fragments>
+		</li>
+		</comps>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_WhitworthShell_Round</defName>
+		<label>make Whitworth cannon solid shot x5</label>
+		<description>Craft 5 Withworth cannon solid shot.</description>
+		<jobString>Making Whitworth solid shot.</jobString>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+		<workAmount>6600</workAmount>
+		<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Steel</li>
+				</thingDefs>
+			</filter>
+			<count>66</count>
+		</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_WhitworthShell_Round>5</Ammo_WhitworthShell_Round>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_WhitworthShell_Bursting</defName>
+		<label>make Whitworth bursting shell x5</label>
+		<description>Craft 5 Whitworth bursting shells.</description>
+		<jobString>Making Whitworth bursting shells.</jobString>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+		<ingredients>
+		<li>
+			<filter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+			</filter>
+			<count>66</count>
+		</li>
+		<li>
+			<filter>
+			<thingDefs>
+				<li>FSX</li>
+			</thingDefs>
+			</filter>
+			<count>9</count>
+		</li>
+		</ingredients>
+		<fixedIngredientFilter>
+		<thingDefs>
+			<li>Steel</li>
+			<li>FSX</li>
+		</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		<Ammo_WhitworthShell_Bursting>5</Ammo_WhitworthShell_Bursting>
+		</products>
+		<workAmount>11400</workAmount>
+	</RecipeDef>
+
+</Defs>

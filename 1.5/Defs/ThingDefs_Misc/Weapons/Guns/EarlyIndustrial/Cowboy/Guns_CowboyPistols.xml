@@ -28,6 +28,117 @@
 
 	-->
 
+	<!-- ==================== Over/Under Flintlock Pistol  ==================== -->
+
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_OverUnderFlintlockPistolAug</defName>
+		<label>Over/Under Flintlock Pistol</label>
+		<description>Over/Under Flintlock Pistol, two rapid shots in an efficient design pattern. A favorite of Pirates.\n\n"The word "rum" and the word "death" mean the same thing to you"</description>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Flintlocks/FlintlockDoubleBarrelPistol</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<weaponClasses>
+		  <li>RangedLight</li>
+		  <li>ShortShots</li>
+		</weaponClasses>		
+		<statBases>
+			<WorkToMake>5000</WorkToMake>
+			<SightsEfficiency>0.70</SightsEfficiency>
+			<ShotSpread>0.04</ShotSpread>
+			<SwayFactor>1.59</SwayFactor>
+			<Bulk>3.60</Bulk>
+			<Mass>1.40</Mass>
+			<RangedWeapon_Cooldown>0.45</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>5</WoodLog>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>			
+		</costList>		
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>3.40</recoilAmount>					
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_Slow62Ball_FMJ</defaultProjectile>
+				<warmupTime>0.9</warmupTime>
+				<range>13</range>
+				<soundCast>Shot_CE_Musket</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>2</magazineSize>		
+				<reloadOneAtATime>true</reloadOneAtATime>				
+				<reloadTime>7</reloadTime>
+				<ammoSet>AmmoSet_62RifleLV</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_MuzzleLoading</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>5</Crafting>
+		  </skillRequirements>	
+		</recipeMaker> 
+		<tools>
+		  <li Class="CombatExtended.ToolCE">
+			<label>grip</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>2</power>
+			<cooldownTime>1.54</cooldownTime>
+			<chanceFactor>1.5</chanceFactor>
+			<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+			<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+		  </li>
+		  <li Class="CombatExtended.ToolCE">
+			<label>muzzle</label>
+			<capacities>
+			  <li>Poke</li>
+			</capacities>
+			<power>2</power>
+			<cooldownTime>1.54</cooldownTime>
+			<armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+			<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+		  </li>
+		</tools>
+		<weaponTags>		
+		 <li>CE_AI_BROOM</li>
+		 <li>CE_OneHandedWeapon</li>
+		 <li>NeolithicRangedDecent</li>		
+		 <li>NeolithicRangedChief</li>
+		 <li>NeolithicRangedHeavy</li>		 	 
+		</weaponTags>						
+		<modExtensions>
+			<li Class="CombatExtended.GunDrawExtension">
+				<DrawSize>0.85,0.85</DrawSize>
+				<DrawOffset>0.0,0.0</DrawOffset>
+			</li>	
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalshTwo</def>
+				<drawSize>(1,1)</drawSize>
+				<offsets>
+					<li>(0.305,0.018)</li>
+				</offsets>	
+		    </li>				
+		</modExtensions>
+	</ThingDef>		
+	
+
 	<!-- Colt Walker -->
 
 	<ThingDef ParentName="BaseMakeableGun">

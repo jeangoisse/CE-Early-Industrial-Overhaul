@@ -1,6 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<!-- ==================== W Hand Mortor ==================== -->
+	
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_WHandMortor</defName>
+		<label>Wheelock Hand Mortar</label>
+		<description>Wheelock Hand Mortar. Simple black powder grenade launcher, can be held in one hand.\n\n"Oh, they're goin' ta have to glue you back together... IN HELL!"</description>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Flintlocks/WheellockGrenadeLauncehr</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<generateAllowChance>0.66</generateAllowChance>	
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>5500</WorkToMake>
+			<SightsEfficiency>0.50</SightsEfficiency>
+			<ShotSpread>0.6</ShotSpread>
+			<SwayFactor>2.40</SwayFactor>
+			<Bulk>4.50</Bulk>
+			<Mass>3.2</Mass>
+			<RangedWeapon_Cooldown>0.33</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>10</WoodLog>
+			<Steel>35</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>4.0</recoilAmount>				
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_MortarGrenade</defaultProjectile>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<warmupTime>0.9</warmupTime>
+				<range>40</range>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>				
+				<soundCast>Shot_CE_Musket</soundCast>
+				<muzzleFlashScale>3</muzzleFlashScale>
+				<ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>1</magazineSize>		
+				<reloadTime>7.0</reloadTime>
+				<ammoSet>AmmoSet_MortarGrenade</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CE_Gunpowder</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>3</Crafting>
+		  </skillRequirements>	
+		</recipeMaker>   
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>2.02</cooldownTime>
+          <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+	  <modExtensions>
+		<li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>0.86,0.86</DrawSize>
+			<DrawOffset>-0.02,-0.00</DrawOffset>
+		</li>
+	  </modExtensions>
+	  <weaponTags>
+		<li>CE_AI_AOE</li>
+		<li>NeolithicRangedChief</li>
+		<li>NeolithicRangedHeavy</li>
+		<li>CE_OneHandedWeapon</li>
+	  </weaponTags>
+	</ThingDef>		
+	
+
+	<!-- Hand-Mortar -->
+	
+	<ThingDef ParentName="BaseMakeableGun">
+		<defName>CE_Gun_PHandMortor</defName>
+		<label>Percussion Hand Mortar</label>
+		<description>Percussion Hand Mortar. A simple black powder grenade launcher, effective against groups of enemies.\n\n“It is well that war is so terrible, lest we should grow too fond of it."\n-Lee</description>
+		<graphicData>
+			<texPath>Things/Weapons/Guns/WildWest/Rifles/percussion_mortar</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Revolver</soundInteract>
+		<statBases>
+			<WorkToMake>5000</WorkToMake>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.016</ShotSpread>
+			<SwayFactor>1.00</SwayFactor>
+			<Bulk>7.32</Bulk>
+			<Mass>2.8</Mass>
+			<RangedWeapon_Cooldown>0.86</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<WoodLog>10</WoodLog>
+			<Steel>40</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>2.0</recoilAmount>				
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_MortarGrenade</defaultProjectile>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<warmupTime>1.1</warmupTime>
+				<range>44</range>
+				<minRange>5</minRange>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>				
+				<soundCast>InfernoCannon_Fire</soundCast>
+				<muzzleFlashScale>3</muzzleFlashScale>
+				<ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>1</magazineSize>		
+ 				<AmmoGenPerMagOverride>2</AmmoGenPerMagOverride>
+				<reloadTime>8.5</reloadTime>
+				<ammoSet>AmmoSet_MortarGrenade</ammoSet>
+			</li>
+			<li Class="CombatExtended.CompProperties_FireModes">
+				<aiUseBurstMode>FALSE</aiUseBurstMode>
+				<aiAimMode>AimedShot</aiAimMode>
+			</li>
+		</comps>
+		<recipeMaker>
+		<researchPrerequisite>CEFP_PercussionCap</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		  <skillRequirements>
+			<Crafting>3</Crafting>
+		  </skillRequirements>	
+		</recipeMaker>   
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>2.02</cooldownTime>
+          <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>1.55</cooldownTime>
+          <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+	  <modExtensions>
+		<li Class="CombatExtended.GunDrawExtension">
+			<DrawSize>1.33,1.33</DrawSize>
+			<DrawOffset>0.05,-0.05</DrawOffset>
+		</li>
+	  </modExtensions>
+	  <weaponTags>
+		<li>GunGrenadeLauncher</li>
+		<li>GunHeavy</li>
+		<li>CE_AI_AOE</li>
+		<li>FrontierGunAdvanced</li>
+		<li>NeolithicRangedChief</li>
+		<li>NeolithicRangedHeavy</li>
+	  </weaponTags>
+	</ThingDef>		
+
+    <CombatExtended.BipodCategoryDef>
+        <defName>bipodRest</defName>
+        <label>Rifle Rest</label>
+        <bipod_id>Bipod_Rest</bipod_id>
+        <ad_Range>3</ad_Range>
+        <setuptime>300</setuptime>
+        <recoil_mult_setup>0.85</recoil_mult_setup>
+        <recoil_mult_NOT_setup>1</recoil_mult_NOT_setup>
+        <warmup_mult_setup>0.85</warmup_mult_setup>
+        <warmup_mult_NOT_setup>1.1</warmup_mult_NOT_setup>
+        <logColor>(0, 0, 255)</logColor>
+        <swayMult>0.50</swayMult>
+        <swayPenalty>1</swayPenalty>
+        <useAutoSetMode>false</useAutoSetMode>
+    </CombatExtended.BipodCategoryDef>
+
+
 	<!-- Hand-Cannon (CE BP -Bonus) -->
 
 	<ThingDef ParentName="BaseMakeableGun">
