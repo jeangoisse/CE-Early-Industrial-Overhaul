@@ -186,7 +186,7 @@ The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Jos
 		</thingSetMakerTags>
 	</ThingDef>	
 
-	<!-- Stock -->
+	<!-- C96 Stock -->
 
 	<ThingDef ParentName="CGF1_MWP_PistolCarbine_SemiAuto_T2">
 		<defName>CGF1_MWP_Mauser_C96_Stock_</defName>
@@ -276,7 +276,7 @@ The Mauser C96 is a semi-automatic handgun designed by Fidel, Friedrich, and Jos
 		<generateCommonality>0.05</generateCommonality> <!-- Uncommon -->
 	</ThingDef>	
 
-	<!-- Stock scope -->
+	<!-- c96 Stock scope -->
 
 	<ThingDef ParentName="CGF1_MWP_PistolCarbine_SemiAuto_T2">
 		<defName>CGF1_MWP_Mauser_C96_Stock_Scope_</defName>

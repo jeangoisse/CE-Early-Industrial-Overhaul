@@ -41,6 +41,7 @@
 		<li>CE.BlackPowderRifle</li>
 		<li>CE.AuggieBlackPowderGuns</li>
 		<li>CE.Auggie2Bore</li>
+		<li>uniform20th.scandinav</li>
 		<li>Snek.GunResearchOverhaul</li>
 	</incompatibleWith>	
 	<loadAfter>

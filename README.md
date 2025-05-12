@@ -43,12 +43,12 @@ _________
 - Wildwest Firearms : Europe Imports
 - Hunt Rimdown - Weapons
 - Antique Firearms for CE
+- 20th Century Uniforms : Scandinavia
 - Gun Research Overhaul
 
 ### Future Content
 - More firearms bloat
 - Emplacements & more heavy weapons
-- More flintlocks & smoothbores
 - More industrial weapons
 - Recipes expansion
 -   Early Components to craft weapons
