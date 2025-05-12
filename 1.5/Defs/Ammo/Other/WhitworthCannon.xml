@@ -47,7 +47,7 @@
 		<description>A solid shell of metal, capable of delivering significant damage on a direct hit.</description>
 		<graphicData>
 			<texPath>Things/Ammo/Cannon/BlackPowder/Roundshot</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<MarketValue>26.18</MarketValue>
@@ -61,7 +61,7 @@
 		<description>Hollow and filled with explosives, exploding on impact and producing razor-sharp metal splinters.</description>
 		<graphicData>
 			<texPath>Things/Ammo/Cannon/BlackPowder/Bursting</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<MarketValue>47.45</MarketValue>
