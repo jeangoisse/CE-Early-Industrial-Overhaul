@@ -46,7 +46,7 @@
 		<label>Whitworth solid shot</label>
 		<description>A solid shell of metal, capable of delivering significant damage on a direct hit.</description>
 		<graphicData>
-			<texPath>Things/Ammo/Cannon/BlackPowder/Cannon_Round</texPath>
+			<texPath>Things/Ammo/Cannon/BlackPowder/Roundshot</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
@@ -60,7 +60,7 @@
 		<label>Whitworth bursting shell</label>
 		<description>Hollow and filled with explosives, exploding on impact and producing razor-sharp metal splinters.</description>
 		<graphicData>
-			<texPath>Things/Ammo/Cannon/BlackPowder/Cannon_Bursting</texPath>
+			<texPath>Things/Ammo/Cannon/BlackPowder/Bursting</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
